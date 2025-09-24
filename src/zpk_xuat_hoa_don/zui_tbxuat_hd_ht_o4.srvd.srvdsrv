@@ -1,0 +1,6 @@
+@EndUserText.label: 'HT hóa đơn'
+define service ZUI_TBXUAT_HD_HT_O4 {
+  expose ZC_TBXUAT_HD_HT;
+  expose ZC_TBHT_HD;
+  expose ZC_TBPB_HD;
+}

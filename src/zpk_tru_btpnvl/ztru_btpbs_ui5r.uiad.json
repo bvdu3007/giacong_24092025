@@ -1,0 +1,34 @@
+{
+  "formatVersion": "2",
+  "header": {
+    "description": "An SAP Fiori application.",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "appType": "ui5",
+    "catalogId": "SAP_TC_UI5_REPO_UIAD",
+    "targetMappingTitle": "Bảng trừ BTP/NVL cấp bổ sung"
+  },
+  "ui5AppDetails": {
+    "appId": "ztrubtpbs"
+  },
+  "navigation": {
+    "targetMappingId": "UI5R_76AC5589BB45BC92EBD52990E675AF5683D70E91_TM",
+    "semanticObject": "ztru_btpbs",
+    "action": "manage",
+    "desktop": true,
+    "tablet": true,
+    "phone": true
+  },
+  "tiles": [
+    {
+      "id": "UI5R_76AC5589BB45BC92EBD52990E675AF5683D70E91_AL",
+      "tileType": "static",
+      "isDefault": true,
+      "standard": {
+        "title": "Bảng trừ BTP/NVL cấp bổ sung"
+      }
+    }
+  ]
+}

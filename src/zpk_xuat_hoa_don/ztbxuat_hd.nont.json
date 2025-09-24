@@ -1,0 +1,11 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "SAP Object Node Type ZTBXUAT_HD",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "name": "ZTBXUAT_HD",
+  "sapObjectType": "ZTBXUAT_HD",
+  "rootNode": true
+}

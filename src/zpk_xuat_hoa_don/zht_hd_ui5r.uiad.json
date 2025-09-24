@@ -1,0 +1,34 @@
+{
+  "formatVersion": "2",
+  "header": {
+    "description": "An SAP Fiori application.",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "appType": "ui5",
+    "catalogId": "SAP_TC_UI5_REPO_UIAD",
+    "targetMappingTitle": "Hạch toán hóa đơn"
+  },
+  "ui5AppDetails": {
+    "appId": "zhthd"
+  },
+  "navigation": {
+    "targetMappingId": "UI5R_1D0E06603DA952AC466C19CA8E340A3442F1179D_TM",
+    "semanticObject": "zht_hd",
+    "action": "manage",
+    "desktop": true,
+    "tablet": true,
+    "phone": true
+  },
+  "tiles": [
+    {
+      "id": "UI5R_1D0E06603DA952AC466C19CA8E340A3442F1179D_AL",
+      "tileType": "static",
+      "isDefault": true,
+      "standard": {
+        "title": "Hạch toán hóa đơn"
+      }
+    }
+  ]
+}

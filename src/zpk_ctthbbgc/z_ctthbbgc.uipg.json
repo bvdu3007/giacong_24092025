@@ -1,0 +1,25 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "Page Template - BC chi tiết, TH BBGC",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "title": "BC chi tiết, TH BBGC"
+  },
+  "sections": [
+    {
+      "id": "SECTION_1",
+      "visualizations": [
+        {
+          "id": "SECTION_1_VIZ_1",
+          "ladiAssignment": {
+            "ladiId": "Z_CTTHBBGC_UI5R",
+            "tileId": "UI5R_520301EC4887CF3674D52E49806DF427E4DD1E66_AL"
+          }
+        }
+      ]
+    }
+  ]
+}

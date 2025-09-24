@@ -1,0 +1,238 @@
+@Metadata.layer: #CORE
+@UI.headerInfo.title.type: #STANDARD
+@UI.headerInfo.title.value: 'Material'
+@UI.headerInfo.description.type: #STANDARD
+@UI.headerInfo.description.value: 'Productdescription'
+annotate view ZC_TBPB_HD with
+{
+  @UI.facet: [ {
+    label: 'General Information',
+    id: 'GeneralInfo',
+    purpose: #STANDARD,
+    position: 10 ,
+    type: #IDENTIFICATION_REFERENCE
+  } ]
+
+
+  @UI.identification: [ {
+     position: 10 ,
+     label: 'Mã hàng'
+   } ]
+  @UI.lineItem: [ {
+    position: 10 ,
+    label: 'Mã hàng'
+  } ]
+  @UI.selectionField: [ {
+    position: 10
+  } ]
+
+  Material;
+
+  @EndUserText.label: 'Tên hàng'
+  @UI.identification: [ {
+    position: 40
+  } ]
+  @UI.lineItem: [ {
+    position: 40
+  } ]
+  @UI.selectionField: [ {
+    position: 40
+  } ]
+  Productdescription;
+
+  @EndUserText.label: 'PO gia công'
+  @UI.identification: [ {
+    position: 50
+  } ]
+  @UI.lineItem: [ {
+    position: 50
+  } ]
+  @UI.selectionField: [ {
+    position: 50
+  } ]
+  Sopo;
+
+  @EndUserText.label: 'PO item'
+  @UI.identification: [ {
+    position: 55
+  } ]
+  @UI.lineItem: [ {
+    position: 55
+  } ]
+  @UI.selectionField: [ {
+    position: 55
+  } ]
+  Poitem;
+
+  @EndUserText.label: 'Công đoạn'
+  @UI.identification: [ {
+    position: 57
+  } ]
+  @UI.lineItem: [ {
+    position: 57
+  } ]
+  @UI.selectionField: [ {
+    position: 57
+  } ]
+  Purchaseorderitemtext;
+
+  //  @EndUserText.label: 'Công đoạn'
+  @UI.identification: [ {
+    position: 60
+  } ]
+  @UI.lineItem: [ {
+    position: 60
+  } ]
+  @UI.selectionField: [ {
+    position: 60
+  } ]
+  purchasinghistorydocumentyear;
+  @UI.identification: [ {
+    position: 63
+  } ]
+  @UI.lineItem: [ {
+    position: 63
+  } ]
+  @UI.selectionField: [ {
+    position: 63
+  } ]
+  purchasinghistorydocument;
+
+  @UI.identification: [ {
+  position: 66
+  } ]
+  @UI.lineItem: [ {
+    position: 66
+  } ]
+  @UI.selectionField: [ {
+    position: 66
+  } ]
+  purchasinghistorydocumentitem;
+
+  @EndUserText.label: 'Số lượng'
+  @UI.identification: [ {
+    position: 70
+  } ]
+  @UI.lineItem: [ {
+    position: 70
+  } ]
+  @UI.selectionField: [ {
+    position: 70
+  } ]
+  Soluong;
+
+  @EndUserText.label: 'Đơn giá PO'
+  @UI.identification: [ {
+    position: 75 ,
+    label: 'Đơn giá PO'
+  } ]
+  @UI.lineItem: [ {
+    position: 75 ,
+    label: 'Đơn giá PO'
+  } ]
+  @UI.selectionField: [ {
+    position: 75
+  } ]
+  Ct07;
+
+  @EndUserText.label: 'Tổng tiền theo PO'
+  @UI.identification: [ {
+    position: 80 ,
+    label: 'Tổng tiền theo PO'
+  } ]
+  @UI.lineItem: [ {
+    position: 80 ,
+    label: 'Tổng tiền theo PO'
+  } ]
+  @UI.selectionField: [ {
+    position: 80
+  } ]
+  Ct08;
+
+  @EndUserText.label: ' Đơn giá hóa đơn '
+  @UI.identification: [ {
+    position: 90 ,
+    label: ' Đơn giá hóa đơn '
+  } ]
+  @UI.lineItem: [ {
+    position: 90 ,
+    label: ' Đơn giá hóa đơn '
+  } ]
+  @UI.selectionField: [ {
+    position: 90
+  } ]
+  Ct10;
+
+  @EndUserText.label: ' Số tiền phân bổ theo PO '
+  @UI.identification: [ {
+    position: 100 ,
+    label: ' Số tiền phân bổ theo PO '
+  } ]
+  @UI.lineItem: [ {
+    position: 100 ,
+    label: ' Số tiền phân bổ theo PO '
+  } ]
+  @UI.selectionField: [ {
+    position: 100
+  } ]
+  Ct11;
+
+  @EndUserText.label: ' Tổng tiền xuất hóa đơn (sau thuế) '
+  @UI.identification: [ {
+    position: 110 ,
+    label: ' Tổng tiền xuất hóa đơn (sau thuế) '
+  } ]
+  @UI.lineItem: [ {
+    position: 110 ,
+    label: ' Tổng tiền xuất hóa đơn (sau thuế) '
+  } ]
+  @UI.selectionField: [ {
+    position: 110
+  } ]
+  Ct13;
+
+  //  @UI.identification: [ {
+  //    position: 140
+  //  } ]
+  //  @UI.lineItem: [ {
+  //    position: 140
+  //  } ]
+  //  @UI.selectionField: [ {
+  //    position: 140
+  //  } ]
+  //  CreatedBy;
+  //
+  //  @UI.identification: [ {
+  //    position: 150
+  //  } ]
+  //  @UI.lineItem: [ {
+  //    position: 150
+  //  } ]
+  //  @UI.selectionField: [ {
+  //    position: 150
+  //  } ]
+  //  CreatedAt;
+  //
+  //  @UI.identification: [ {
+  //    position: 160
+  //  } ]
+  //  @UI.lineItem: [ {
+  //    position: 160
+  //  } ]
+  //  @UI.selectionField: [ {
+  //    position: 160
+  //  } ]
+  //  LastChangedBy;
+  //
+  //  @UI.identification: [ {
+  //    position: 170
+  //  } ]
+  //  @UI.lineItem: [ {
+  //    position: 170
+  //  } ]
+  //  @UI.selectionField: [ {
+  //    position: 170
+  //  } ]
+  //  LastChangedAt;
+
+}

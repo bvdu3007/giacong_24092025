@@ -1,0 +1,272 @@
+managed implementation in class ZBP_R_TBXUAT_HD unique;
+strict ( 2 );
+with draft;
+extensible;
+define behavior for ZR_TBXUAT_HD alias ZrTbxuatHd
+//persistent table ZTB_XUAT_HD
+extensible
+draft table ztbxuat_hd_d
+etag master LastChangedAt
+lock master total etag LastChangedAt
+authorization master ( global )
+with unmanaged save
+{
+  field ( readonly )
+  HdrID,
+  Zperdesc,
+ Trangthai,
+  SearchTerm1,
+  supplierinvoice,
+             invoicingparty ,
+     invoicingpartyName,
+  code,
+  message,
+  Sumdatetime,
+  Tongtienhtst,
+  Tongtienxnst,
+  Mahd,
+  CreatedBy,
+  CreatedAt,
+  LastChangedBy,
+  LastChangedAt;
+
+  //  field(  )  Tongtienxn;
+
+  field ( numbering : managed )
+  HdrID;
+
+  field ( mandatory : create )
+  Zper,
+  Bukrs,
+  Supplier, lan;
+
+  field ( readonly : update )
+  Zper,
+  Bukrs,
+  Supplier, lan;
+
+  field ( features : instance ) Tongtienxn, Thuesuat, Tongtienht;
+  create;
+  update( features : instance );
+  delete ( features : instance );
+
+    action ( features : instance ) btnPrintPDF result [1] ZC_XHD_1;
+
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Edit;
+  draft action Resume;
+  draft determine action Prepare {
+    validation check_data;
+  }
+
+  mapping for ztb_xuat_hd corresponding extensible
+    {
+      HdrID           = hdr_id;
+      Zper            = zper;
+      Zperdesc        = zperdesc;
+      Bukrs           = bukrs;
+      Mahd            = mahd;
+      Ngayht          = ngayht;
+      Ngaydh          = ngaydh;
+      Supplier        = supplier;
+      Searchterm1     = searchterm1;
+      trangthai      = trangthai;
+      supplierinvoice = supplierinvoice;
+      code            = code;
+      message         = message;
+      Thuesuat        = thuesuat;
+      tongtienpo      = tongtienpo;
+      tongtiengr      = tongtiengr;
+      Tongtienxn      = tongtienxn;
+      Tongtienht      = tongtienht;
+      Sumdate         = sumdate;
+      Sumdatetime     = sumdatetime;
+      CreatedBy       = created_by;
+      CreatedAt       = created_at;
+      LastChangedBy   = last_changed_by;
+      LastChangedAt   = last_changed_at;
+    }
+  action ( features : instance ) UpdateData result [1] $self;
+  action ( features : instance ) XacNhan result [1] $self;
+  action ( features : instance ) HuyXacNhan result [1] $self;
+  action ( features : instance ) HachToan_HD result [1] $self;
+  action ( features : instance ) Huy_HD result [1] $self;
+//   action  Huy_HD ;//result [1] $self;
+  static action CreateByPer parameter ZC_CREATE_BY_PER1 result [0..1] $self;
+  determination Cancel_Inv on save { create; update; }
+  validation check_data on save { create; update; }
+
+  association _xn { create ( features : instance ); with draft; }
+  association _ht { create ( features : instance ); with draft; }
+  association _pb { create ( features : instance ); with draft; }
+}
+
+define behavior for ZR_TBXN_XUAT_HD alias ZrTbxnXuatHd
+persistent table ztb_xn_xuat_hd
+draft table ztbxn_xuat_hd_d
+lock dependent by _hdr
+authorization dependent by _hdr
+{
+  field ( readonly )
+  HdrID,
+  XnhdID,
+  CreatedBy,
+  CreatedAt,
+  LastChangedBy,
+  LastChangedAt,
+  Material,
+  Productdescription,
+  Sopo,
+  Soluong,
+  Materialbaseunit,
+  Ct07,
+  Ct08,
+  Ct10,
+  Ct11,
+  Ct13;
+
+  field ( numbering : managed )
+  XnhdID;
+
+  update;
+  delete;
+
+  mapping for ztb_xn_xuat_hd corresponding
+    {
+      HdrID              = hdr_id;
+      XnhdID             = xnhd_id;
+      Material           = material;
+      Productdescription = productdescription;
+      Sopo               = sopo;
+      Soluong            = soluong;
+      Materialbaseunit   = materialbaseunit;
+      Ct07               = ct07;
+      Ct08               = ct08;
+      Ct10               = ct10;
+      Ct11               = ct11;
+      Ct13               = ct13;
+      CreatedBy          = created_by;
+      CreatedAt          = created_at;
+      LastChangedBy      = last_changed_by;
+      LastChangedAt      = last_changed_at;
+    }
+
+  association _hdr { with draft; }
+
+}
+
+define behavior for ZR_TBHT_HD alias ZrTbhtHd
+persistent table ztb_ht_hd
+draft table ztbht_hd_d
+lock dependent by _hdr
+authorization dependent by _hdr
+{
+  field ( readonly )
+  HdrID,
+  HthdID,
+  CreatedBy,
+  CreatedAt,
+  LastChangedBy,
+  LastChangedAt,
+  Material,
+  Productdescription,
+  Sopo,
+  Soluong,
+  Materialbaseunit,
+  Ct07,
+  Ct08,
+  Ct10,
+  Ct11,
+  Ct13;
+
+  field ( numbering : managed )
+  HthdID;
+
+  update;
+  delete;
+
+  mapping for ztb_ht_hd corresponding
+    {
+      HdrID              = hdr_id;
+      HthdID             = hthd_id;
+      Material           = material;
+      Productdescription = productdescription;
+      Sopo               = sopo;
+      Soluong            = soluong;
+      Materialbaseunit   = materialbaseunit;
+      Ct07               = ct07;
+      Ct08               = ct08;
+      Ct10               = ct10;
+      Ct11               = ct11;
+      Ct13               = ct13;
+      CreatedBy          = created_by;
+      CreatedAt          = created_at;
+      LastChangedBy      = last_changed_by;
+      LastChangedAt      = last_changed_at;
+    }
+
+  association _hdr { with draft; }
+
+}
+
+define behavior for ZR_TBPB_HD alias ZrTbpbHd
+persistent table ztb_pb_hd
+draft table ztbpb_hd_d
+lock dependent by _hdr
+authorization dependent by _hdr
+{
+  field ( readonly )
+  HdrID,
+  PbhdID,
+  CreatedBy,
+  CreatedAt,
+  LastChangedBy,
+  LastChangedAt,
+  Material,
+  Productdescription,
+  purchasinghistorydocumentyear,
+  purchasinghistorydocument,
+  purchasinghistorydocumentitem,
+  Sopo,
+  Soluong,
+  Materialbaseunit,
+  Ct07,
+  Ct08,
+  Ct10,
+  Ct11,
+  Ct13,
+  Poitem,
+  Purchaseorderitemtext;
+
+  field ( numbering : managed )
+  PbhdID;
+
+  update;
+  delete;
+
+  mapping for ztb_pb_hd corresponding
+    {
+      HdrID                 = hdr_id;
+      PbhdID                = pbhd_id;
+      Material              = material;
+      Productdescription    = productdescription;
+      Sopo                  = sopo;
+      Poitem                = poitem;
+      Purchaseorderitemtext = purchaseorderitemtext;
+      Soluong               = soluong;
+      Materialbaseunit      = materialbaseunit;
+      Ct07                  = ct07;
+      Ct08                  = ct08;
+      Ct10                  = ct10;
+      Ct11                  = ct11;
+      Ct13                  = ct13;
+      CreatedBy             = created_by;
+      CreatedAt             = created_at;
+      LastChangedBy         = last_changed_by;
+      LastChangedAt         = last_changed_at;
+    }
+
+  association _hdr { with draft; }
+
+}

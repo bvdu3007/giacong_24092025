@@ -1,0 +1,199 @@
+managed implementation in class ZBP_R_TBDCGC_HDR unique;
+strict ( 2 );
+with draft;
+extensible;
+define behavior for ZR_TBDCGC_HDR alias ZrTbdcgcHdr
+//persistent table ZTB_DCGC_HDR
+extensible
+draft table ztbdcgc_hdr_d
+etag master LastChangedAt
+lock master total etag LastChangedAt
+authorization master ( global )
+with unmanaged save
+{
+  field ( readonly )
+  HdrID,
+  CreatedBy,
+  CreatedAt,
+
+  LastChangedBy,
+  LastChangedAt,
+  Sumdate,
+  Sumdatetime,
+  Zperdesc,
+  SearchTerm1,
+  Ct01,
+  Ct02,
+  Ct03,
+  Ct011,
+  Ct021,
+  Ct031,
+  ct03a,
+  ct03b,
+  ct03a1,
+  ct03b1,
+  Ct04,
+  Ct05,
+  Ct06,
+  Ct09,
+  Ct07,
+  Ct08,
+  ct10,
+  ct11,
+  ct12,
+  ct13;
+  field ( numbering : managed )
+  HdrID;
+
+  field ( mandatory : create )
+  Zper,
+  Bukrs,
+  Supplier, lan;
+
+  field ( readonly : update )
+  Zper,
+  Bukrs,
+  Supplier, lan;
+  field( features: instance )  trangthai;
+  create;
+  update ( features : instance );
+  delete ( features : instance );
+
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Edit;
+  draft action Resume;
+  draft determine action Prepare;
+
+  mapping for ztb_dcgc_hdr corresponding extensible
+    {
+      HdrID         = hdr_id;
+      Zper          = zper;
+      Zperdesc      = zperdesc;
+      Bukrs         = bukrs;
+      Supplier      = supplier;
+      Sumdate       = sumdate;
+      Sumdatetime   = sumdatetime;
+      Ct01          = ct01;
+      Ct02          = ct02;
+      Ct03          = ct03;
+      Ct011         = ct011;
+      Ct021         = ct021;
+      Ct031         = ct031;
+      ct03a         = ct03a;
+      ct03b         = ct03b;
+      Ct04          = ct04;
+      Ct05          = ct05;
+      Ct06          = ct06;
+      Ct07          = ct07;
+      Ct08          = ct08;
+      Ct09          = ct09;
+      ct10          = ct10;
+      ct11          = ct11;
+      ct12          = ct12;
+      ct13 =        ct13;
+      CreatedBy     = created_by;
+      CreatedAt     = created_at;
+      LastChangedBy = last_changed_by;
+      LastChangedAt = last_changed_at;
+    }
+  association _dtl { create ( features : instance ); with draft; }
+  action ( features : instance )  UpdateData result [1] $self;
+  static action  PheDuyet
+     parameter zr_tbdcgc_static result [1] $self;
+  static action HuyPheDuyet parameter zr_tbdcgc_static result [1] $self;
+  function FPheDuyet result [1] $self;
+  function  FHuyPheDuyet result [1] $self;
+  static action CreateByPer parameter zc_create_by_per result [0..1] $self;
+
+}
+
+define behavior for ZR_TBDCGC_DTL alias ZrTbdcgcDtl
+//persistent table ZTB_DCGC_DTL
+draft table ztbdcgc_dtl_d
+lock dependent by _hdr
+authorization dependent by _hdr
+with unmanaged save
+{
+  field ( readonly )
+  HdrID,
+  DtlID,
+  CreatedBy,
+  CreatedAt,
+  LastChangedBy,
+  LastChangedAt,
+  Ngaynhaphang,
+  Sobbgc,
+  Sopo,
+  OrderID,
+  SalesOrder,
+  Material,
+  ProductDescription,
+  Ct09,
+  Ct10,
+  Ct11,
+  Ct12,
+  Ct13,
+  Ct14,
+  Ct15,
+  Ct16,
+  Ct17,
+  Ct18,
+  Ct19,
+  Ct20,
+  Ct21,
+  Ct22,
+  Ct23,
+  Ct24,
+  Ct25,
+  Ct26,
+  Ct28;
+
+  field ( numbering : managed )
+  DtlID;
+
+  update ( features : instance );
+
+  delete ( features : instance );
+
+  mapping for ztb_dcgc_dtl corresponding
+    {
+      HdrID         = hdr_id;
+      DtlID         = dtl_id;
+      Ngaynhaphang  = ngaynhaphang;
+      Sobbgc        = sobbgc;
+      Sopo          = sopo;
+      Ct09          = ct09;
+      Ct10          = ct10;
+      Ct11          = ct11;
+      Ct12          = ct12;
+      Ct13          = ct13;
+      Ct14          = ct14;
+      Ct15          = ct15;
+      Ct16          = ct16;
+      Ct17          = ct17;
+      Ct18          = ct18;
+      Ct19          = ct19;
+      Ct20          = ct20;
+      Ct21          = ct21;
+      Ct22          = ct22;
+      Ct23          = ct23;
+      Ct24          = ct24;
+      Ct25          = ct25;
+      Ct26          = ct26;
+      Ct27          = ct27;
+      Ct28          = ct28;
+      Ct29          = ct29;
+      Ct30          = ct30;
+      Ct31          = ct31;
+      Ct32          = ct32;
+      Ct33          = ct33;
+      CreatedBy     = created_by;
+      CreatedAt     = created_at;
+      LastChangedBy = last_changed_by;
+      LastChangedAt = last_changed_at;
+    }
+
+  association _hdr { with draft; }
+
+}

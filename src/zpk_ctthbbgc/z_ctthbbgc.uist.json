@@ -1,0 +1,16 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "Space Template - BC chi tiết, TH BBGC",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "title": "Báo cáo chi tiết, tổng hợp biên bản gia công"
+  },
+  "pages": [
+    {
+      "name": "Z_CTTHBBGC"
+    }
+  ]
+}

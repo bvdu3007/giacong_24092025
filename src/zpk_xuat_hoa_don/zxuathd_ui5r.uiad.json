@@ -1,0 +1,34 @@
+{
+  "formatVersion": "2",
+  "header": {
+    "description": "Table xuất hóa đơn",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "appType": "ui5",
+    "catalogId": "SAP_TC_UI5_REPO_UIAD",
+    "targetMappingTitle": "Xuất hóa đơn"
+  },
+  "ui5AppDetails": {
+    "appId": "xuathoadon"
+  },
+  "navigation": {
+    "targetMappingId": "UI5R_534E2243859BBB8E50C0CF2D650F4BBA02398325_TM",
+    "semanticObject": "Z_XUAT_HD",
+    "action": "display",
+    "desktop": true,
+    "tablet": true,
+    "phone": true
+  },
+  "tiles": [
+    {
+      "id": "UI5R_534E2243859BBB8E50C0CF2D650F4BBA02398325_AL",
+      "tileType": "static",
+      "isDefault": true,
+      "standard": {
+        "title": "Xuất hóa đơn"
+      }
+    }
+  ]
+}

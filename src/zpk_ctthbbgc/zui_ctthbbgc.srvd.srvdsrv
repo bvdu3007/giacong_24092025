@@ -1,0 +1,4 @@
+@EndUserText.label: 'BC chi tiết, TH BBGC'
+define service ZUI_CTTHBBGC {
+  expose ZC_CTTHBBGC as CTTHBBGC;
+}

@@ -1,0 +1,6 @@
+@EndUserText.label: 'ZR_TBDG_BTP_THIEU'
+@MappingRole: true
+define role ZR_TBDG_BTP_THIEU {
+  grant select on ZR_TBDG_BTP_THIEU
+  where TRUE;
+}

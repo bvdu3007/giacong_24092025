@@ -1,0 +1,5 @@
+@EndUserText.label: 'BB gia công'
+define service ZUI_TBBB_GC_O4 {
+  expose ZC_TBBB_GC;
+  expose ZC_TBGC_LOI;
+}

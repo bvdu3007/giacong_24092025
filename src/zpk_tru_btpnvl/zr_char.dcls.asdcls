@@ -1,0 +1,11 @@
+@EndUserText.label: 'ZR_Char'
+@MappingRole: true
+define role ZR_CHAR {
+    grant
+        select
+            on
+                ZC_CHARACTERISTICS
+                    where
+                        true;
+                        
+}

@@ -1,0 +1,6 @@
+@EndUserText.label: 'ZC_TBTRU_BS_DTL'
+@MappingRole: true
+define role ZC_TBTRU_BS_DTL {
+  grant select on ZC_TBTRU_BS_DTL
+  where INHERITING CONDITIONS FROM ENTITY ZR_TBTRU_BS_DTL REPLACING { ROOT WITH _BaseEntity };
+}

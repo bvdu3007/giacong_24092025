@@ -1,0 +1,26 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "Launchpad gia công",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "title": "Gia công"
+  },
+  "sections": [
+    {
+      "id": "SECTION_1",
+      "title": "Gia công",
+      "visualizations": [
+        {
+          "id": "SECTION_1_VIZ_1",
+          "ladiAssignment": {
+            "ladiId": "ZGC_MALOI_HANG_UI5R",
+            "tileId": "UI5R_CB794B4FE6EE022BED54DC7915F7333E52FCF47E_AL"
+          }
+        }
+      ]
+    }
+  ]
+}

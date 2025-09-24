@@ -1,0 +1,6 @@
+@EndUserText.label: 'ZR_TBMAT_TYPE'
+@MappingRole: true
+define role ZR_TBMAT_TYPE {
+  grant select on ZR_TBMAT_TYPE
+  where TRUE;
+}

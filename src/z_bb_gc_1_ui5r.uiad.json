@@ -1,0 +1,34 @@
+{
+  "formatVersion": "2",
+  "header": {
+    "description": "An SAP Fiori application.",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "appType": "ui5",
+    "catalogId": "SAP_TC_UI5_REPO_UIAD",
+    "targetMappingTitle": "Biên bản gia công"
+  },
+  "ui5AppDetails": {
+    "appId": "zbbgc1"
+  },
+  "navigation": {
+    "targetMappingId": "UI5R_A13EE774CF1333DCD20E4518FDA71C610625F4ED_TM",
+    "semanticObject": "z_bb_gc_1",
+    "action": "manage",
+    "desktop": true,
+    "tablet": true,
+    "phone": true
+  },
+  "tiles": [
+    {
+      "id": "UI5R_A13EE774CF1333DCD20E4518FDA71C610625F4ED_AL",
+      "tileType": "static",
+      "isDefault": true,
+      "standard": {
+        "title": "Biên bản gia công"
+      }
+    }
+  ]
+}

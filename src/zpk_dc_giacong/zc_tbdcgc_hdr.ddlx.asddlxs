@@ -1,0 +1,337 @@
+@Metadata.layer: #CORE
+@UI.headerInfo.title.type: #STANDARD
+@UI.headerInfo.title.value: 'Zper'
+@UI.headerInfo.description.type: #STANDARD
+@UI.headerInfo.description.value: 'Supplier'
+annotate view ZC_TBDCGC_HDR with
+{
+
+  @UI.facet: [ {
+    label: 'General Information',
+    id: 'GeneralInfo',
+    purpose: #STANDARD,
+    position: 10 ,
+    type: #IDENTIFICATION_REFERENCE
+  } 
+//  ,
+//       {
+//      id: 'GR1',
+//      purpose: #STANDARD,
+//      position: 20,
+//      label: 'Trừ tiền hàng không đạt không xuất được cont',
+//      type: #FIELDGROUP_REFERENCE,
+//      targetQualifier: 'GR1'
+//    }
+    ,{
+      id: 'GR2',
+      purpose: #STANDARD,
+      position: 30,
+      label: 'Trừ tiền BTP thiếu trong tháng',
+      type: #FIELDGROUP_REFERENCE,
+      targetQualifier: 'GR2'
+    },
+//    ,{
+//      id: 'GR3',
+//      purpose: #STANDARD,
+//      position: 40,
+//      label: 'Trừ tiền trả TP sau cont',
+//      type: #FIELDGROUP_REFERENCE,
+//      targetQualifier: 'GR3'
+//    }
+//    ,{
+//      id: 'GR6',
+//      purpose: #STANDARD,
+//      position: 50,
+//      label: 'Trừ tiền hàng trả chậm sau KH nhưng xuất được hàng',
+//      type: #FIELDGROUP_REFERENCE,
+//      targetQualifier: 'GR6'
+//    },{
+//      id: 'GR7',
+//      purpose: #STANDARD,
+//      position: 60,
+//      label: 'Trừ tiền kiểm hàng phải kiểm lại 100% do lỗi gia công',
+//      type: #FIELDGROUP_REFERENCE,
+//      targetQualifier: 'GR7'
+//    },
+    {
+      id: 'GR4',
+      purpose: #STANDARD,
+      position: 70,
+      label: 'Khác',
+      type: #FIELDGROUP_REFERENCE,
+      targetQualifier: 'GR4'
+    },
+       {
+      id: 'Items',
+      purpose: #STANDARD,
+      position: 100,
+      label: 'Chi tiết',
+      type: #LINEITEM_REFERENCE,
+      targetElement: '_dtl'
+    }
+  ]
+
+  @UI.identification: [ {
+    position: 20
+  } ]
+  @UI.lineItem: [ {
+    position: 20
+  }, { type: #FOR_ACTION, dataAction: 'CreateByPer', label: 'Tạo BB đối chiếu cho kỳ' }
+  , { type: #FOR_ACTION, dataAction: 'UpdateData', label: 'Cập nhật thông tin' } ]
+//  , { type: #FOR_ACTION, dataAction: 'PheDuyet', label: 'Phê duyệt' } 
+//  , { type: #FOR_ACTION, dataAction: 'HuyPheDuyet', label: 'Hủy phê duyệt' }  ]
+  @UI.selectionField: [ {
+    position: 20
+  } ]
+  Zper;
+
+  @UI.identification: [ {
+    position: 30
+  } ]
+  @UI.lineItem: [ {
+    position: 30
+  } ]
+
+  Zperdesc;
+
+  @UI.identification: [ {
+    position: 35
+  } ]
+  @UI.lineItem: [ {
+    position: 35
+  } ]
+  @UI.selectionField: [ {
+    position: 35
+  } ]
+  lan;
+  
+  @UI.identification: [ {
+    position: 40
+  } ]
+  @UI.lineItem: [ {
+    position: 40
+  } ]
+  @UI.selectionField: [ {
+    position: 40
+  } ]
+  Bukrs;
+
+  @EndUserText.label: 'Mã nhà gia công'
+  @UI.identification: [ {
+    position: 50
+  } ]
+  @UI.lineItem: [ {
+    position: 50
+  } ]
+  @UI.selectionField: [ {
+    position: 50
+  } ]
+  Supplier;
+
+  @UI.identification: [ {
+    position: 52 
+  } ]
+  @UI.lineItem: [ {
+    position: 52 
+  } ]
+  @UI.selectionField: [ {
+    position: 52
+  } ]
+  trangthai;
+  
+  @EndUserText.label: 'Tên nhà gia công'
+  @UI.identification: [ {
+    position: 55
+  } ]
+  @UI.lineItem: [ {
+    position: 55
+  } ]
+
+  SearchTerm1;
+
+  @EndUserText.label: 'Thời gian cập nhật thông tin gia công'
+  @UI.identification: [ {
+    position: 70
+  } ]
+  @UI.lineItem: [ {
+    position: 70
+  } ]
+
+  Sumdatetime;
+
+//  @EndUserText.label: 'Trừ tiền hàng không đạt không xuất được cont'
+//  @UI.lineItem: [ {
+//    position: 80 ,
+//    label: 'Trừ tiền hàng không đạt không xuất được cont'
+//  } ]
+//
+//  @UI.fieldGroup: [ { label: 'Số tiền', qualifier: 'GR1', position: 20} ]
+//  Ct01;
+//
+//  @UI.fieldGroup: [ { label: 'Tỉ lệ', qualifier: 'GR1', position: 10} ]
+//  Ct011;
+
+
+  @EndUserText.label: 'Trừ tiền BTP thiếu trong tháng'
+  @UI.lineItem: [ {
+    position: 90 ,
+    label: 'Trừ tiền BTP thiếu trong tháng'
+  } ]
+  @UI.fieldGroup: [ { label: 'Số tiền', qualifier: 'GR2', position: 20} ]
+  Ct02;
+
+  @UI.fieldGroup: [ { label: 'Tỉ lệ', qualifier: 'GR2', position: 10} ]
+  Ct021;
+
+//  @EndUserText.label: 'Trả sau cont'
+//  @UI.lineItem: [ {
+//    position: 100 ,
+//    label: 'Trả sau cont'
+//  } ]
+//  @UI.fieldGroup: [ { label: 'Số tiền', qualifier: 'GR3', position: 20} ]
+//  Ct03;
+//
+//  @UI.fieldGroup: [ { label: 'Tỉ lệ', qualifier: 'GR3', position: 10} ]
+//  Ct031;
+  
+//  @EndUserText.label: 'Trừ tiền hàng trả chậm sau KH nhưng xuất được hàng'
+//  @UI.lineItem: [ {
+//    position: 103 ,
+//    label: 'Trừ tiền hàng trả chậm sau KH nhưng xuất được hàng'
+//  } ]
+//  @UI.fieldGroup: [ { label: 'Số tiền', qualifier: 'GR6', position: 20} ]
+//  ct03a;
+//
+//  @UI.fieldGroup: [ { label: 'Tỉ lệ', qualifier: 'GR6', position: 10} ]
+//  ct03a1;
+//  
+//    @EndUserText.label: 'Trừ tiền kiểm hàng phải kiểm lại 100% do lỗi gia công '
+//  @UI.lineItem: [ {
+//    position: 106 ,
+//    label: 'Trừ tiền kiểm hàng phải kiểm lại 100% do lỗi gia công '
+//  } ]
+//  @UI.fieldGroup: [ { label: 'Số tiền', qualifier: 'GR7', position: 20} ]
+//  ct03b;
+//
+//  @UI.fieldGroup: [ { label: 'Tỉ lệ', qualifier: 'GR7', position: 10} ]
+//  ct03b1;
+    
+  @EndUserText.label: 'Tổng tiền cấp bổ sung trong tháng'
+
+  @UI.lineItem: [ {
+    position: 110 ,
+    label: 'Tổng tiền cấp bổ sung trong tháng'
+  } ]
+  @UI.fieldGroup: [ { qualifier: 'GR4', position: 40} ]
+  Ct04;
+
+  @EndUserText.label: 'Vỏ bao'
+
+  @UI.lineItem: [ {
+    position: 120 ,
+    label: 'Vỏ bao'
+  } ]
+  @UI.fieldGroup: [ { qualifier: 'GR4', position: 50} ]
+  Ct05;
+
+  @EndUserText.label: 'Trừ tiền lỗi biên bản (côn trùng, dị vật, chỉ nhúng dầu)'
+  @UI.lineItem: [ {
+    position: 130 ,
+    label: 'Trừ tiền lỗi biên bản (côn trùng, dị vật, chỉ nhúng dầu)'
+  } ]
+  @UI.fieldGroup: [ { qualifier: 'GR4', position: 60} ]
+  Ct06;
+
+  @EndUserText.label: 'Cộng trừ khác (Trừ lưu cont lưu ca..)'
+  @UI.lineItem: [ {
+    position: 140 ,
+    label: 'Cộng trừ khác (Trừ lưu cont lưu ca..)'
+  } ]
+  @UI.fieldGroup: [ { qualifier: 'GR4', position: 70} ]
+  Ct07;
+
+  @EndUserText.label: 'Hỗ trợ'
+  @UI.lineItem: [ {
+    position: 150 ,
+    label: 'Hỗ trợ'
+  } ]
+  @UI.fieldGroup: [ { qualifier: 'GR4', position: 80} ]
+  Ct08;
+
+  @EndUserText.label: 'Tổng cộng công nợ phát sinh trong kỳ (chưa VAT)'
+  @UI.lineItem: [ {
+    position: 160 ,
+    label: 'Tổng cộng công nợ phát sinh trong kỳ (chưa VAT)'
+  } ]
+  @UI.fieldGroup: [ { qualifier: 'GR4', position: 90} ]
+  Ct09;
+  
+    @EndUserText.label: 'Chênh lệch công nợ chưa xuất hóa đơn kỳ trước chuyển sang'
+  @UI.lineItem: [ {
+    position: 170 ,
+    label: 'Chênh lệch công nợ chưa xuất hóa đơn kỳ trước chuyển sang'
+  } ]
+  @UI.fieldGroup: [ { qualifier: 'GR4', position: 100} ]
+  ct10;
+  
+    @EndUserText.label: 'Tổng số tiền phải thanh toán cho công nợ trong kỳ'
+  @UI.lineItem: [ {
+    position: 180 ,
+    label: 'Tổng số tiền phải thanh toán cho công nợ trong kỳ'
+  } ]
+  @UI.fieldGroup: [ { qualifier: 'GR4', position: 110} ]
+  ct11;
+  
+    @EndUserText.label: 'Số tiền đã xuất hóa đơn trong kỳ'
+  @UI.lineItem: [ {
+    position: 160 ,
+    label: 'Số tiền đã xuất hóa đơn trong kỳ'
+  } ]
+  @UI.fieldGroup: [ { qualifier: 'GR4', position: 120} ]
+  ct12;
+  
+    @EndUserText.label: 'Công nợ cần xuất hóa đơn'
+  @UI.lineItem: [ {
+    position: 160 ,
+    label: 'Công nợ cần xuất hóa đơn'
+  } ]
+  @UI.fieldGroup: [ { qualifier: 'GR4', position: 130} ]
+  ct13;
+
+  @UI.identification: [ {
+    position: 900
+  } ]
+  @UI.lineItem: [ {
+    position: 900
+  } ]
+
+  CreatedBy;
+
+  @UI.identification: [ {
+    position: 910
+  } ]
+  @UI.lineItem: [ {
+    position: 910
+  } ]
+
+  CreatedAt;
+
+  @UI.identification: [ {
+    position: 920
+  } ]
+  @UI.lineItem: [ {
+    position: 920
+  } ]
+
+  LastChangedBy;
+
+  @UI.identification: [ {
+    position: 930
+  } ]
+  @UI.lineItem: [ {
+    position: 930
+  } ]
+
+  LastChangedAt;
+
+}

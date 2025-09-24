@@ -1,0 +1,436 @@
+@Metadata.layer: #CORE
+@UI.headerInfo.title.type: #STANDARD
+@UI.headerInfo.title.value: 'Sobbgc'
+@UI.headerInfo.description.type: #STANDARD
+@UI.headerInfo.description.value: 'Sobbgc'
+annotate view ZC_TBDCGC_DTL with
+{
+  @UI.facet: [ {
+    label: 'General Information', 
+    id: 'GeneralInfo', 
+    purpose: #STANDARD, 
+    position: 10 , 
+    type: #IDENTIFICATION_REFERENCE
+  } ]
+   
+  @EndUserText.label: 'Ngày nhập hàng'
+  @UI.identification: [ {
+    position: 30 , 
+    label: 'Ngày nhập hàng'
+  } ]
+  @UI.lineItem: [ {
+    position: 30 , 
+    label: 'Ngày nhập hàng'
+  } ]
+  @UI.selectionField: [ {
+    position: 30 
+  } ]
+  Ngaynhaphang;
+  
+  @UI.identification: [ {
+    position: 40 
+  } ]
+  @UI.lineItem: [ {
+    position: 40 
+  } ]
+  @UI.selectionField: [ {
+    position: 40 
+  } ]
+  Sobbgc;
+  
+  @UI.identification: [ {
+    position: 50 
+  } ]
+  @UI.lineItem: [ {
+    position: 50 
+  } ]
+  @UI.selectionField: [ {
+    position: 50 
+  } ]
+  Sopo;
+  
+  
+  @EndUserText.label: 'LSX gia công'
+  @UI.lineItem: [ {
+  position: 51
+  } ]
+
+  @UI.fieldGroup: [ { qualifier: 'PO', position: 40} ]
+  OrderID;
+
+  @EndUserText.label: 'Số SO'
+  @UI.lineItem: [ {
+  position: 52
+  } ]
+
+  @UI.fieldGroup: [ { qualifier: 'PO', position: 50} ]
+  SalesOrder;
+
+  @EndUserText.label: 'Mã vật tư'
+  @UI.lineItem: [ {
+  position: 53
+  } ]
+
+  @UI.fieldGroup: [ { qualifier: 'PO', position: 60} ]
+  Material;
+
+  @UI.lineItem: [ {
+  position: 54
+  } ]
+
+  @EndUserText.label: 'Tên vật tư'
+  @UI.fieldGroup: [ { qualifier: 'PO', position: 70} ]
+  ProductDescription;
+  
+  @EndUserText.label: 'Số lượng hàng đạt thực tế (cái)'
+  @UI.identification: [ {
+    position: 60 , 
+    label: 'Số lượng hàng đạt thực tế (cái)'
+  } ]
+  @UI.lineItem: [ {
+    position: 60 , 
+    label: 'Số lượng hàng đạt thực tế (cái)'
+  } ]
+  @UI.selectionField: [ {
+    position: 60 
+  } ]
+  Ct09;
+  
+  @EndUserText.label: 'Bảng 1'
+  @UI.identification: [ {
+    position: 70 , 
+    label: 'Bảng 1'
+  } ]
+  @UI.lineItem: [ {
+    position: 70 , 
+    label: 'Bảng 1'
+  } ]
+  @UI.selectionField: [ {
+    position: 70 
+  } ]
+  Ct10;
+  
+  @EndUserText.label: 'Bảng 2 (lỗi nghiêm trọng)'
+  @UI.identification: [ {
+    position: 80 , 
+    label: 'Bảng 2 (lỗi nghiêm trọng)'
+  } ]
+  @UI.lineItem: [ {
+    position: 80 , 
+    label: 'Bảng 2 (lỗi nghiêm trọng)'
+  } ]
+  @UI.selectionField: [ {
+    position: 80 
+  } ]
+  Ct11;
+  
+  @EndUserText.label: 'Lỗi đặc biệt nghiêm trọng'
+  @UI.identification: [ {
+    position: 90 , 
+    label: 'Lỗi đặc biệt nghiêm trọng'
+  } ]
+  @UI.lineItem: [ {
+    position: 90 , 
+    label: 'Lỗi đặc biệt nghiêm trọng'
+  } ]
+  @UI.selectionField: [ {
+    position: 90 
+  } ]
+  Ct12;
+  
+  @EndUserText.label: 'Tổng hàng Kém CL >10% (cái)'
+  @UI.identification: [ {
+    position: 100 , 
+    label: 'Tổng hàng Kém CL >10% (cái)'
+  } ]
+  @UI.lineItem: [ {
+    position: 100 , 
+    label: 'Tổng hàng Kém CL >10% (cái)'
+  } ]
+  @UI.selectionField: [ {
+    position: 100 
+  } ]
+  Ct13;
+  
+  @EndUserText.label: 'Tổng hàng Kém CL'
+  @UI.identification: [ {
+    position: 110 , 
+    label: 'Tổng hàng Kém CL'
+  } ]
+  @UI.lineItem: [ {
+    position: 110 , 
+    label: 'Tổng hàng Kém CL'
+  } ]
+  @UI.selectionField: [ {
+    position: 110 
+  } ]
+  Ct14;
+  
+  @EndUserText.label: 'Tổng hàng đạt và kém chất lượng'
+  @UI.identification: [ {
+    position: 120 , 
+    label: 'Tổng hàng đạt và kém chất lượng'
+  } ]
+  @UI.lineItem: [ {
+    position: 120 , 
+    label: 'Tổng hàng đạt và kém chất lượng'
+  } ]
+  @UI.selectionField: [ {
+    position: 120 
+  } ]
+  Ct15;
+  
+  @EndUserText.label: 'Tổng hàng thực nhận'
+  @UI.identification: [ {
+    position: 130 , 
+    label: 'Tổng hàng thực nhận'
+  } ]
+  @UI.lineItem: [ {
+    position: 130 , 
+    label: 'Tổng hàng thực nhận'
+  } ]
+  @UI.selectionField: [ {
+    position: 130 
+  } ]
+  Ct16;
+  
+  @EndUserText.label: 'ĐG may kiểm'
+  @UI.identification: [ {
+    position: 140 , 
+    label: 'ĐG may kiểm'
+  } ]
+  @UI.lineItem: [ {
+    position: 140 , 
+    label: 'ĐG may kiểm'
+  } ]
+  @UI.selectionField: [ {
+    position: 140 
+  } ]
+  Ct17;
+  
+  @EndUserText.label: 'Tổng tiền gia công theo đơn giá'
+  @UI.identification: [ {
+    position: 150 , 
+    label: 'Tổng tiền gia công theo đơn giá'
+  } ]
+  @UI.lineItem: [ {
+    position: 150 , 
+    label: 'Tổng tiền gia công theo đơn giá'
+  } ]
+  @UI.selectionField: [ {
+    position: 150 
+  } ]
+  Ct18;
+//  
+//  @EndUserText.label: 'Tổng tiền gia công theo đơn giá'
+//  @UI.identification: [ {
+//    position: 160 , 
+//    label: 'Tổng tiền gia công theo đơn giá'
+//  } ]
+//  @UI.lineItem: [ {
+//    position: 160 , 
+//    label: 'Tổng tiền gia công theo đơn giá'
+//  } ]
+//  @UI.selectionField: [ {
+//    position: 160 
+//  } ]
+//  Ct19;
+  
+  @EndUserText.label: 'Tỷ lệ trừ tiền hàng ko đạt vượt bảng 2 (lỗi nghiêm trọng)'
+  @UI.identification: [ {
+    position: 170 , 
+    label: 'Tỷ lệ trừ tiền hàng ko đạt vượt bảng 2 (lỗi nghiêm trọng)'
+  } ]
+  @UI.lineItem: [ {
+    position: 170 , 
+    label: 'Tỷ lệ trừ tiền hàng ko đạt vượt bảng 2 (lỗi nghiêm trọng)'
+  } ]
+  @UI.selectionField: [ {
+    position: 170 
+  } ]
+  Ct20;
+  
+  @EndUserText.label: 'Trừ tiền hàng ko đạt bảng 2 (lỗi nghiêm trọng)'
+  @UI.identification: [ {
+    position: 180 , 
+    label: 'Trừ tiền hàng ko đạt bảng 2 (lỗi nghiêm trọng)'
+  } ]
+  @UI.lineItem: [ {
+    position: 180 , 
+    label: 'Trừ tiền hàng ko đạt bảng 2 (lỗi nghiêm trọng)'
+  } ]
+  @UI.selectionField: [ {
+    position: 180 
+  } ]
+  Ct21;
+  
+  @EndUserText.label: 'Tỷ lệ trừ tiền hàng lỗi đặc biệt nghiêm trọng'
+  @UI.identification: [ {
+    position: 190 , 
+    label: 'Tỷ lệ trừ tiền hàng lỗi đặc biệt nghiêm trọng'
+  } ]
+  @UI.lineItem: [ {
+    position: 190 , 
+    label: 'Tỷ lệ trừ tiền hàng lỗi đặc biệt nghiêm trọng'
+  } ]
+  @UI.selectionField: [ {
+    position: 190 
+  } ]
+  Ct22;
+  
+  @EndUserText.label: 'Trừ tiền hàng ko đạt bảng 2 (lỗi đặc biệt nghiêm trọng)'
+  @UI.identification: [ {
+    position: 200 , 
+    label: 'Trừ tiền hàng ko đạt bảng 2 (lỗi đặc biệt nghiêm trọng)'
+  } ]
+  @UI.lineItem: [ {
+    position: 200 , 
+    label: 'Trừ tiền hàng ko đạt bảng 2 (lỗi đặc biệt nghiêm trọng)'
+  } ]
+  @UI.selectionField: [ {
+    position: 200 
+  } ]
+  Ct23;
+  
+  @EndUserText.label: 'Trừ tiền hàng kém CL'
+  @UI.identification: [ {
+    position: 210 , 
+    label: 'Trừ tiền hàng kém CL'
+  } ]
+  @UI.lineItem: [ {
+    position: 210 , 
+    label: 'Trừ tiền hàng kém CL'
+  } ]
+  @UI.selectionField: [ {
+    position: 210 
+  } ]
+  Ct24;
+  
+  @EndUserText.label: 'Trừ tiền hàng không đạt không xuất được cont'
+  @UI.identification: [ {
+    position: 211 , 
+    label: 'Trừ tiền hàng không đạt không xuất được cont'
+  } ]
+  @UI.lineItem: [ {
+    position: 211 , 
+    label: 'Trừ tiền hàng không đạt không xuất được cont'
+  } ]
+  @UI.selectionField: [ {
+    position: 211 
+  } ]
+  ct29;
+  
+    @EndUserText.label: 'Trừ tiền Hàng trả chậm sau KH nhưng xuất được hàng'
+  @UI.identification: [ {
+    position: 212 , 
+    label: 'Trừ tiền Hàng trả chậm sau KH nhưng xuất được hàng'
+  } ]
+  @UI.lineItem: [ {
+    position: 212 , 
+    label: 'Trừ tiền Hàng trả chậm sau KH nhưng xuất được hàng'
+  } ]
+  @UI.selectionField: [ {
+    position: 212 
+  } ]
+  ct30;
+  
+    @EndUserText.label: ' Trừ tiền trả TP sau cont  '
+  @UI.identification: [ {
+    position: 213 , 
+    label: ' Trừ tiền trả TP sau cont  '
+  } ]
+  @UI.lineItem: [ {
+    position: 213 , 
+    label: ' Trừ tiền trả TP sau cont  '
+  } ]
+  @UI.selectionField: [ {
+    position: 213 
+  } ]
+  ct31;
+  
+    @EndUserText.label: 'Trừ tiền kiểm hàng phải kiểm lại 100% do lỗi gia công'
+  @UI.identification: [ {
+    position: 214 , 
+    label: 'Trừ tiền kiểm hàng phải kiểm lại 100% do lỗi gia công'
+  } ]
+  @UI.lineItem: [ {
+    position: 214 , 
+    label: 'Trừ tiền kiểm hàng phải kiểm lại 100% do lỗi gia công'
+  } ]
+  @UI.selectionField: [ {
+    position: 214 
+  } ]
+  ct32;
+  
+    @EndUserText.label: 'Tổng tiền trừ may kiểm, vận chuyển cho hàng không đạt sau cont không xuất được'
+  @UI.identification: [ {
+    position: 217 , 
+    label: 'Tổng tiền trừ may kiểm, vận chuyển cho hàng không đạt sau cont không xuất được'
+  } ]
+  @UI.lineItem: [ {
+    position: 217 , 
+    label: 'Tổng tiền trừ may kiểm, vận chuyển cho hàng không đạt sau cont không xuất được'
+  } ]
+  @UI.selectionField: [ {
+    position: 217 
+  } ]
+  ct33;
+  
+  
+  @EndUserText.label: 'Đơn giá V/C'
+  @UI.identification: [ {
+    position: 220 , 
+    label: 'Đơn giá V/C'
+  } ]
+  @UI.lineItem: [ {
+    position: 220 , 
+    label: 'Đơn giá V/C'
+  } ]
+  @UI.selectionField: [ {
+    position: 220 
+  } ]
+  Ct25;
+  
+  @EndUserText.label: 'Tổng tiền vận chuyển'
+  @UI.identification: [ {
+    position: 230 , 
+    label: 'Tổng tiền vận chuyển'
+  } ]
+  @UI.lineItem: [ {
+    position: 230 , 
+    label: 'Tổng tiền vận chuyển'
+  } ]
+  @UI.selectionField: [ {
+    position: 230 
+  } ]
+  Ct26;
+  
+  @EndUserText.label: 'Cộng/trừ tiền công đoạn may thiếu/ thừa'
+  @UI.identification: [ {
+    position: 240 , 
+    label: 'Cộng/trừ tiền công đoạn may thiếu/ thừa '
+  } ]
+  @UI.lineItem: [ {
+    position: 240 , 
+    label: 'Cộng/trừ tiền công đoạn may thiếu/ thừa'
+  } ]
+  @UI.selectionField: [ {
+    position: 240 
+  } ]
+  Ct27;
+  
+  @EndUserText.label: 'Tổng tiền được nhận'
+  @UI.identification: [ {
+    position: 250 , 
+    label: 'Tổng tiền được nhận'
+  } ]
+  @UI.lineItem: [ {
+    position: 250 , 
+    label: 'Tổng tiền được nhận'
+  } ]
+  @UI.selectionField: [ {
+    position: 250 
+  } ]
+  Ct28;
+  
+}

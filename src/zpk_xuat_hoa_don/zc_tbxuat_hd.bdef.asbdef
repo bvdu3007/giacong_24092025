@@ -1,0 +1,53 @@
+projection implementation in class ZBP_C_TBXUAT_HD unique;
+strict ( 2 );
+extensible;
+use draft;
+use side effects;
+define behavior for ZC_TBXUAT_HD alias ZcTbxuatHd
+extensible
+use etag
+{
+  use create;
+  use update;
+  use delete;
+
+  use action Edit;
+  use action Activate;
+  use action Discard;
+  use action Resume;
+  use action Prepare;
+  use action UpdateData;
+  use action XacNhan;
+  use action HuyXacNhan;
+  use action CreateByPer;
+  use action btnPrintPDF;
+
+//  use action HachToan_HD;
+
+use association _xn { create; with draft; }
+//use association _ht { create; with draft; }
+//use association _pb { create; with draft; }
+}
+
+define behavior for ZC_TBXN_XUAT_HD alias ZcTbxnXuatHd
+{
+  use update;
+  use delete;
+
+  use association _hdr { with draft; }
+}
+//
+//define behavior for ZC_TBHT_HD alias ZcTbhtHd
+//{
+//  use update;
+//  use delete;
+//
+//  use association _hdr { with draft; }
+//}
+//define behavior for ZC_TBPB_HD alias ZcTbpbHd
+//{
+//  use update;
+//  use delete;
+//
+//  use association _hdr { with draft; }
+//}

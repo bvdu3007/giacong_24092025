@@ -1,0 +1,4 @@
+@EndUserText.label: 'Báo cáo xuất nhập tồn'
+define service Zsd_xnt {
+  expose ZC_BC_XNT;
+}

@@ -1,0 +1,34 @@
+{
+  "formatVersion": "2",
+  "header": {
+    "description": "An SAP Fiori application.",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "appType": "ui5",
+    "catalogId": "SAP_TC_UI5_REPO_UIAD",
+    "targetMappingTitle": "Bảng trừ tiền BTP thừa thiếu"
+  },
+  "ui5AppDetails": {
+    "appId": "ztrubtpthieu"
+  },
+  "navigation": {
+    "targetMappingId": "UI5R_FC2D8DA89ECD2049CB76C341762B6F60FA01FD79_TM",
+    "semanticObject": "ztru_btp_thieu",
+    "action": "manage",
+    "desktop": true,
+    "tablet": true,
+    "phone": true
+  },
+  "tiles": [
+    {
+      "id": "UI5R_FC2D8DA89ECD2049CB76C341762B6F60FA01FD79_AL",
+      "tileType": "static",
+      "isDefault": true,
+      "standard": {
+        "title": "Bảng trừ tiền BTP thừa thiếu"
+      }
+    }
+  ]
+}

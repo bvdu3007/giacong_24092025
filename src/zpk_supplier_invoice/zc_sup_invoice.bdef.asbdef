@@ -1,0 +1,14 @@
+unmanaged implementation in class zbp_c_sup_invoice unique;
+strict ( 2 );
+
+define behavior for zc_sup_invoice //alias <alias_name>
+//late numbering
+lock master
+authorization master ( instance )
+//etag master <field_name>
+{
+  create ( authorization : global );
+  update;
+  delete;
+  field ( readonly ) InvoiceId;
+}

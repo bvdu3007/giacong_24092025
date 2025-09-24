@@ -1,0 +1,35 @@
+{
+  "formatVersion": "2",
+  "header": {
+    "description": "Biên bản gia công",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "appType": "ui5",
+    "catalogId": "SAP_TC_UI5_REPO_UIAD",
+    "targetMappingTitle": "Gia công"
+  },
+  "ui5AppDetails": {
+    "appId": "zbbgc"
+  },
+  "navigation": {
+    "targetMappingId": "UI5R_8F7815A0A96BC07695C1B2714B79CE4CB10012A9_TM",
+    "semanticObject": "z_bb_gc",
+    "action": "manage",
+    "desktop": true,
+    "tablet": true,
+    "phone": true
+  },
+  "tiles": [
+    {
+      "id": "UI5R_8F7815A0A96BC07695C1B2714B79CE4CB10012A9_AL",
+      "tileType": "static",
+      "isDefault": true,
+      "standard": {
+        "title": "Gia công",
+        "subtitle": "Gia công"
+      }
+    }
+  ]
+}

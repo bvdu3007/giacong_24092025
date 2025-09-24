@@ -1,0 +1,11 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "SAP Object Node Type ZTBDCGC_HDR",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "name": "ZTBDCGC_HDR",
+  "sapObjectType": "ZTBDCGC_HDR",
+  "rootNode": true
+}

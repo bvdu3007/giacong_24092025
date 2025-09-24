@@ -1,0 +1,11 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "SAP Object Node Type ZTBTRU_BS_DTL",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "name": "ZTBTRU_BS_DTL",
+  "sapObjectType": "ZTBTRU_BS_DTL",
+  "rootNode": true
+}

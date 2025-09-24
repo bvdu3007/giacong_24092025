@@ -1,0 +1,4 @@
+@EndUserText.label: 'Bảng tồn'
+define service Zsd_tb_nxt {
+  expose zc_nxt;
+}

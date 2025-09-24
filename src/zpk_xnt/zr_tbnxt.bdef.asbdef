@@ -1,0 +1,59 @@
+managed implementation in class ZBP_R_TBNXT unique;
+strict ( 2 );
+with draft;
+extensible;
+define behavior for ZR_TBNXT alias ZrTbnxt
+persistent table ZTB_NXT
+extensible
+draft table ZTBNXT_D
+etag master LastChangedAt
+lock master total etag LastChangedAt
+authorization master( global )
+{
+  field ( mandatory : create )
+   Material,
+   Plant,
+   Supplier,
+   Orderid,
+   Zper;
+
+  field ( readonly )
+   CreatedBy,
+   CreatedAt,
+   LastChangedBy,
+   LastChangedAt;
+
+  field ( readonly : update )
+   Material,
+   Plant,
+   Supplier,
+   Orderid,
+   Zper;
+
+
+  create;
+  update;
+  delete;
+
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Edit;
+  draft action Resume;
+  draft determine action Prepare;
+  static action CreateXNT parameter zst_xnt_cr_fr_to;
+  mapping for ZTB_NXT corresponding extensible
+  {
+    Material = material;
+    Plant = plant;
+    Supplier = supplier;
+    Orderid = orderid;
+    Zper = zper;
+    Quantityinbaseunit = quantityinbaseunit;
+    Materialbaseunit = materialbaseunit;
+    CreatedBy = created_by;
+    CreatedAt = created_at;
+    LastChangedBy = last_changed_by;
+    LastChangedAt = last_changed_at;
+  }
+
+}

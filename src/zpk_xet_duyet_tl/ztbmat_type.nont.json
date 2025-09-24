@@ -1,0 +1,11 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "SAP Object Node Type ZTBMAT_TYPE",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "name": "ZTBMAT_TYPE",
+  "sapObjectType": "ZTBMAT_TYPE",
+  "rootNode": true
+}

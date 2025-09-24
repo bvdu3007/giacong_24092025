@@ -1,0 +1,6 @@
+@EndUserText.label: 'ZC_TBMAT_TYPE'
+@MappingRole: true
+define role ZC_TBMAT_TYPE {
+  grant select on ZC_TBMAT_TYPE
+  where INHERITING CONDITIONS FROM ENTITY ZR_TBMAT_TYPE REPLACING { ROOT WITH _BaseEntity };
+}

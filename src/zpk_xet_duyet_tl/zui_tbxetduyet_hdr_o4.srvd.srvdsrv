@@ -1,0 +1,13 @@
+@EndUserText: {
+  label: 'Service Definition for ZC_TBXETDUYET_HDR'
+}
+@ObjectModel: {
+  leadingEntity: {
+    name: 'ZC_TBXETDUYET_HDR'
+  }
+}
+define service ZUI_TBXETDUYET_HDR_O4
+  provider contracts odata_v4_ui {
+  expose ZC_TBXETDUYET_HDR;
+  expose ZC_TBXETDUYET_DTL;
+}

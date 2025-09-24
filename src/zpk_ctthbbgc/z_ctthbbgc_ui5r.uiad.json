@@ -1,0 +1,34 @@
+{
+  "formatVersion": "2",
+  "header": {
+    "description": "An SAP Fiori application.",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "appType": "ui5",
+    "catalogId": "SAP_TC_UI5_REPO_UIAD",
+    "targetMappingTitle": "Báo cáo chi tiết lỗi gia công"
+  },
+  "ui5AppDetails": {
+    "appId": "zctthbbgc"
+  },
+  "navigation": {
+    "targetMappingId": "UI5R_520301EC4887CF3674D52E49806DF427E4DD1E66_TM",
+    "semanticObject": "z_ctthbbgc",
+    "action": "display",
+    "desktop": true,
+    "tablet": true,
+    "phone": true
+  },
+  "tiles": [
+    {
+      "id": "UI5R_520301EC4887CF3674D52E49806DF427E4DD1E66_AL",
+      "tileType": "static",
+      "isDefault": true,
+      "standard": {
+        "title": "Báo cáo chi tiết lỗi gia công"
+      }
+    }
+  ]
+}

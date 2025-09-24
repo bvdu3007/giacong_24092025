@@ -1,0 +1,5 @@
+@EndUserText.label: 'ZC_TBGC_LOI'
+@MappingRole: true
+define role ZC_TBGC_LOI {
+  grant select on ZC_TBGC_LOI;
+}

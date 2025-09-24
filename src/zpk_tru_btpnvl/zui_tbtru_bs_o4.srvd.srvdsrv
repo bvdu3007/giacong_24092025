@@ -1,0 +1,13 @@
+@EndUserText: {
+  label: 'Service Definition for ZC_TBTRU_BS'
+}
+@ObjectModel: {
+  leadingEntity: {
+    name: 'ZC_TBTRU_BS'
+  }
+}
+define service ZUI_TBTRU_BS_O4
+  provider contracts odata_v4_ui {
+  expose ZC_TBTRU_BS;
+  expose ZC_TBTRU_BS_DTL;
+}

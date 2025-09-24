@@ -1,0 +1,302 @@
+@Metadata.layer: #CORE
+@UI.headerInfo.title.type: #STANDARD
+@UI.headerInfo.title.value: 'Mahd'
+@UI.headerInfo.description.type: #STANDARD
+@UI.headerInfo.description.value: 'Mahd'
+annotate view ZC_TBXUAT_HD with
+{
+  @UI.facet: [ {
+    label: 'General Information', 
+    id: 'GeneralInfo', 
+    purpose: #STANDARD, 
+    position: 10 , 
+    type: #IDENTIFICATION_REFERENCE
+  }, 
+    {
+      id: 'GR1',
+      purpose: #STANDARD,
+      position: 20,
+      label: 'Thông tin xuất hóa đơn',
+      type: #FIELDGROUP_REFERENCE,
+      targetQualifier: 'GR1'
+    },
+      {
+      id: 'GR2',
+      purpose: #STANDARD,
+      position: 30,
+      label: 'Thông tin hạch toán SAP',
+      type: #FIELDGROUP_REFERENCE,
+      targetQualifier: 'GR2'
+    },
+  {
+      id: 'XN',
+      purpose: #STANDARD,
+      position: 50,
+      label: 'Xác nhận hóa đơn',
+      type: #LINEITEM_REFERENCE,
+      targetElement: '_xn'
+    }
+//    , 
+//  {
+//      id: 'HT',
+//      purpose: #STANDARD,
+//      position: 60,
+//      label: 'Hạch toán hóa đơn',
+//      type: #LINEITEM_REFERENCE,
+//      targetElement: '_ht'
+//    }
+//    , 
+//  {
+//      id: 'PB',
+//      purpose: #STANDARD,
+//      position: 70,
+//      label: 'Phân bổ hóa đơn',
+//      type: #LINEITEM_REFERENCE,
+//      targetElement: '_pb'
+//    }    
+   ]
+
+  
+  @UI.identification: [ {
+    position: 20 
+  } ]
+  @UI.lineItem: [ {
+    position: 20 
+  } , { type: #FOR_ACTION, dataAction: 'CreateByPer', label: 'Tạo hóa đơn cho kỳ' }
+  , { type: #FOR_ACTION, dataAction: 'UpdateData', label: 'Cập nhật thông tin' } 
+  , { type: #FOR_ACTION, dataAction: 'XacNhan', label: 'Xác nhận hóa đơn' }
+  , { type: #FOR_ACTION, dataAction: 'HuyXacNhan', label: 'Hủy xác nhận hóa đơn' }   ]
+  @UI.selectionField: [ {
+    position: 20 
+  } ]
+  Zper;
+  
+  @UI.identification: [ {
+    position: 30 
+  } ]
+  @UI.lineItem: [ {
+    position: 30 
+  } ]
+  Zperdesc;
+  
+    @UI.identification: [ {
+    position: 35 
+  } ]
+  @UI.lineItem: [ {
+    position: 35 
+  } ]
+  lan;
+  
+  @UI.identification: [ {
+    position: 40 
+  } ]
+  @UI.lineItem: [ {
+    position: 40 
+  } ]
+  @UI.selectionField: [ {
+    position: 40 
+  } ]
+  Bukrs;
+  
+  @UI.identification: [ {
+    position: 45 
+  } ]
+  @UI.lineItem: [ {
+    position: 45 
+  } ]
+  @UI.selectionField: [ {
+    position: 45 
+  } ]
+  Trangthai;
+  
+  @UI.lineItem: [ {
+    position: 50 
+  } ]
+  @UI.selectionField: [ {
+    position: 50 
+  } ]
+  
+  @UI.fieldGroup: [ { qualifier: 'GR1', position: 10} ]
+  Mahd;
+  
+//  @UI.lineItem: [ {
+//    position: 55 
+//  } ]
+//  @UI.selectionField: [ {
+//    position: 55 
+//  } ]
+//  @UI.fieldGroup: [ { qualifier: 'GR1', position: 20} ]
+//  sohd;
+//   
+//  
+//  @EndUserText.label: 'Ngày hạch toán'
+//  @UI.lineItem: [ {
+//    position: 60 , 
+//    label: 'Ngày hạch toán'
+//  } ]
+//@UI.fieldGroup: [ { qualifier: 'GR1', position: 30} ]
+//  Ngayht;
+//  
+//  @EndUserText.label: 'Ngày hóa đơn'
+//  @UI.lineItem: [ {
+//    position: 70 , 
+//    label: 'Ngày hóa đơn'
+//  } ]
+//@UI.fieldGroup: [ { qualifier: 'GR1', position: 40} ]
+//  Ngaydh;
+  
+  @EndUserText.label: 'Mã nhà gia công'
+  @UI.identification: [ {
+    position: 80 
+  } ]
+  @UI.lineItem: [ {
+    position: 80 
+  } ]
+  @UI.selectionField: [ {
+    position: 80 
+  } ]
+  Supplier;
+  
+  @EndUserText.label: 'Tên nhà gia công'
+  @UI.identification: [ {
+    position: 90 , 
+    label: 'Tên nhà gia công'
+  } ]
+  @UI.lineItem: [ {
+    position: 90 , 
+    label: 'Tên nhà gia công'
+  } ]
+  @UI.selectionField: [ {
+    position: 90 
+  } ]
+  Searchterm1;
+  
+  @EndUserText.label: 'Thuế suất'
+  @UI.lineItem: [ {
+    position: 100 
+  } ]
+@UI.fieldGroup: [ { qualifier: 'GR1', position: 40} ]
+  Thuesuat;
+  
+  @EndUserText.label: 'Xác nhận-Tổng tiền xuất HĐ (chưa thuế)'
+  @UI.lineItem: [ {
+    position: 110 , 
+    label: 'Xác nhận-Tổng tiền xuất HĐ (chưa thuế)'
+  } ]
+@UI.fieldGroup: [ { qualifier: 'GR1', position: 50} ]
+  Tongtienxn;
+  
+    
+  @EndUserText.label: 'Xác nhận-Tổng tiền xuất HĐ (sau thuế)'
+  @UI.lineItem: [ {
+    position: 115 , 
+    label: 'Xác nhận-Tổng tiền xuất HĐ (sau thuế)'
+  } ]
+@UI.fieldGroup: [ { qualifier: 'GR1', position: 55} ]
+  Tongtienxnst;
+  
+//  @EndUserText.label: 'Hạch toán-Tổng tiền xuất HĐ (chưa thuế)'
+//  @UI.lineItem: [ {
+//    position: 120 , 
+//    label: 'Hạch toán-Tổng tiền xuất HĐ (chưa thuế)'
+//  } ]
+//@UI.fieldGroup: [ { qualifier: 'GR1', position: 60} ]
+//  Tongtienht;
+//  
+//    @EndUserText.label: 'Hạch toán-Tổng tiền xuất HĐ (sau thuế)'
+//  @UI.lineItem: [ {
+//    position: 125 , 
+//    label: 'Hạch toán-Tổng tiền xuất HĐ (sau thuế)'
+//  } ]
+//@UI.fieldGroup: [ { qualifier: 'GR1', position: 65} ]
+//  Tongtienhtst;
+  
+  @EndUserText.label: 'Thời gian cập nhật biên bản gia công'
+  @UI.identification: [ {
+    position: 140 
+  } ]
+  @UI.lineItem: [ {
+    position: 140 
+  } ]
+
+  Sumdatetime;
+  
+  
+  @EndUserText.label: 'Supplier Invoice'
+  @UI.lineItem: [ {
+    position: 130 ,
+    label: 'Supplier Invoice'
+  } ]
+  @UI.fieldGroup: [ { qualifier: 'GR2', position: 10} ]
+  supplierinvoice;
+  
+    @EndUserText.label: 'Invoicing Party'
+  @UI.lineItem: [ {
+    position: 133 ,
+    label: 'Invoicing Party'
+  } ]
+  @UI.fieldGroup: [ { qualifier: 'GR2', position: 13} ]
+  invoicingparty;
+  
+      @EndUserText.label: 'Invoicing Party Name'
+  @UI.lineItem: [ {
+    position: 135 ,
+    label: 'Invoicing Party Name'
+  } ]
+  @UI.fieldGroup: [ { qualifier: 'GR2', position: 15} ]
+  invoicingpartyName;
+
+  @EndUserText.label: 'Code'
+  @UI.lineItem: [ {
+    position: 138 ,
+    label: 'Code'
+  } ]
+  @UI.fieldGroup: [ { qualifier: 'GR2', position: 20} ]
+  code;
+
+  @EndUserText.label: 'Message'
+  @UI.lineItem: [ {
+    position: 190 ,
+    label: 'Message'
+  } ]
+  @UI.fieldGroup: [ { qualifier: 'GR2', position: 30} ]
+  message;
+  
+//  
+//  @UI.identification: [ {
+//    position: 150 
+//  } ]
+//  @UI.lineItem: [ {
+//    position: 150 
+//  } ]
+//
+//  CreatedBy;
+//  
+//  @UI.identification: [ {
+//    position: 160 
+//  } ]
+//  @UI.lineItem: [ {
+//    position: 160 
+//  } ]
+//
+//  CreatedAt;
+//  
+//  @UI.identification: [ {
+//    position: 170 
+//  } ]
+//  @UI.lineItem: [ {
+//    position: 170 
+//  } ]
+//
+//  LastChangedBy;
+//  
+//  @UI.identification: [ {
+//    position: 180 
+//  } ]
+//  @UI.lineItem: [ {
+//    position: 180 
+//  } ]
+//
+//  LastChangedAt;
+  
+}

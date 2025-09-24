@@ -1,0 +1,67 @@
+@Metadata.layer: #CORE
+@UI.headerInfo.title.type: #STANDARD
+@UI.headerInfo.title.value: 'LoaiHang'
+@UI.headerInfo.description.type: #STANDARD
+@UI.headerInfo.description.value: 'LoaiHang'
+annotate view ZC_TB_MALOI_HANG with
+{
+  @UI.facet: [ {
+    label: 'General Information', 
+    id: 'GeneralInfo', 
+    purpose: #STANDARD, 
+    position: 10 , 
+    type: #IDENTIFICATION_REFERENCE
+  } ,
+  
+   {
+      id: 'Items',
+      purpose: #STANDARD,
+      position: 30,
+      label: 'Items',
+      type: #LINEITEM_REFERENCE,
+      targetElement: '_dtl'
+    }
+    ]
+  @UI.identification: [ {
+    position: 10 
+  } ]
+  @UI.lineItem: [ {
+    position: 10 
+  } ]
+  @UI.selectionField: [ {
+    position: 10 
+  } ]
+  LoaiHang;
+  
+    @UI.identification: [ {
+    position: 12 
+  } ]
+  @UI.lineItem: [ {
+    position: 12 ,label: 'Diễn giải loại hàng'
+  }   
+  ]
+
+  LoaiHangDesc;
+  
+  @UI.identification: [ {
+    position: 15 
+  } ]
+  @UI.lineItem: [ {
+    position: 15 
+  } ]
+  @UI.selectionField: [ {
+    position: 15 
+  } ]
+  LoaiLoi;
+  
+    @UI.identification: [ {
+    position: 17 
+  } ]
+  @UI.lineItem: [ {
+    position: 17 ,label: 'Diễn giải loại lỗi'
+  }   
+  ]
+
+  LoaiLoiDesc;
+  
+}

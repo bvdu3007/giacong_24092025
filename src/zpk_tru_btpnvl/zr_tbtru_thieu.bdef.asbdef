@@ -1,0 +1,120 @@
+managed implementation in class ZBP_R_TBTRU_THIEU unique;
+strict ( 2 );
+with draft;
+extensible;
+define behavior for ZR_TBTRU_THIEU alias ZrTbtruThieu
+//persistent table ztb_tru_thieu
+extensible
+draft table ztbtru_thieu_d
+etag master LastChangedAt
+lock master total etag LastChangedAt
+authorization master ( global )
+with unmanaged save
+{
+  field ( readonly )
+  HdrID,
+  Zperdesc,
+  Sumdatetime,
+  CreatedBy,
+  CreatedAt,
+  LastChangedBy,
+  LastChangedAt;
+
+  field ( numbering : managed )
+  HdrID;
+
+  field ( mandatory : create )
+  Zper, Bukrs;
+
+  field ( readonly : update )
+  Zper, Bukrs;
+
+  create;
+  update;
+  delete;
+
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Edit;
+  draft action Resume;
+  draft determine action Prepare;
+
+  mapping for ztb_tru_thieu corresponding extensible
+    {
+      HdrID         = hdr_id;
+      Zper          = zper;
+      Bukrs         = bukrs;
+      Zperdesc      = zperdesc;
+      Sumdate       = sumdate;
+      Sumdatetime   = sumdatetime;
+      CreatedBy     = created_by;
+      CreatedAt     = created_at;
+      LastChangedBy = last_changed_by;
+      LastChangedAt = last_changed_at;
+    }
+
+    association _dtl { create ( features : instance ); with draft; }
+    action(features:instance) UpdateData result [1] $self;
+}
+
+
+define behavior for ZR_TBTRU_THIE_DTL alias ZrTbtruThieDtl
+//persistent table ZTB_XETDUYET_DTL
+draft table ztbtru_the_dtl_d
+lock dependent by _hdr
+authorization dependent by _hdr
+with unmanaged save
+{
+   field ( readonly )
+  HdrID,
+  DtlID,
+  SupplierName,
+  ProductName,
+  Supplier,
+  Material,
+  Charcvalue,
+  Thieu,
+  Thua,
+  Nhap,
+  Slduocphep,
+  Sltru,
+  Dongiatru,
+  Tongtientru,
+  Materialbaseunit,
+  CreatedBy,
+  CreatedAt,
+  LastChangedBy,
+  LastChangedAt;
+
+
+
+  field ( numbering : managed )
+  DtlID;
+
+  update;
+  delete;
+
+  mapping for ZTB_TRU_THIE_DTL corresponding
+  {
+    HdrID = hdr_id;
+    DtlID = dtl_id;
+    Supplier = supplier;
+    Material = material;
+    Charcvalue = charcvalue;
+    Thieu = thieu;
+    Thua = thua;
+    Nhap = nhap;
+    Duocphep = duocphep;
+    Slduocphep = slduocphep;
+    Sltru = sltru;
+    Dongiatru = dongiatru;
+    Tongtientru = tongtientru;
+    Materialbaseunit = materialbaseunit;
+    CreatedBy = created_by;
+    CreatedAt = created_at;
+    LastChangedBy = last_changed_by;
+    LastChangedAt = last_changed_at;
+  }
+  association _hdr { with draft; }
+
+}

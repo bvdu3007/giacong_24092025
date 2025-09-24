@@ -1,0 +1,51 @@
+managed implementation in class ZBP_R_TBDG_BTP_THIEU unique;
+strict ( 2 );
+with draft;
+extensible;
+define behavior for ZR_TBDG_BTP_THIEU alias ZrTbdgBtpThieu
+persistent table ZTB_DG_BTP_THIEU
+extensible
+draft table ZTBDG_BTP_THEU_D
+etag master LastChangedAt
+lock master total etag LastChangedAt
+authorization master( global )
+{
+  field ( readonly )
+   ID,
+   ProductName,
+   ProductGroupName,
+   CreatedBy,
+   CreatedAt,
+   LastChangedBy,
+   LastChangedAt;
+
+  field ( numbering : managed )
+   ID;
+
+
+  create;
+  update;
+  delete;
+
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Edit;
+  draft action Resume;
+  draft determine action Prepare;
+
+  mapping for ZTB_DG_BTP_THIEU corresponding extensible
+  {
+    ID = id;
+    Material = material;
+    Productgroup = productgroup;
+    Characteristic = characteristic;
+    Charcvalue = charcvalue;
+    Price = price;
+    Unit = unit;
+    CreatedBy = created_by;
+    CreatedAt = created_at;
+    LastChangedBy = last_changed_by;
+    LastChangedAt = last_changed_at;
+  }
+
+}

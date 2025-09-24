@@ -1,0 +1,81 @@
+managed implementation in class ZBP_R_TB_MALOI_HANG unique;
+strict ( 2 );
+with draft;
+define behavior for ZR_TB_MALOI_HANG alias ZrTbMaloiHang
+persistent table ztb_maloi_hang
+draft table ztb_maloi_hang_d
+etag master LastChangedAt
+lock master total etag LastChangedAt
+authorization master ( global )
+
+{
+  field ( mandatory : create )
+  LoaiHang;
+
+  field ( readonly )
+  CreatedBy,
+  CreatedAt,
+  LastChangedBy,
+  LastChangedAt,
+  LoaiHangDesc,
+  LoaiLoiDesc;
+
+  field ( readonly : update )
+  LoaiHang, LoaiLoi;
+
+
+  create;
+  update;
+  delete;
+
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Edit;
+  draft action Resume;
+  draft determine action Prepare;
+
+  mapping for ztb_maloi_hang
+    {
+      LoaiHang      = loai_hang;
+      LoaiLoi       = loai_loi;
+      CreatedBy     = created_by;
+      CreatedAt     = created_at;
+      LastChangedBy = last_changed_by;
+      LastChangedAt = last_changed_at;
+    }
+  association _dtl { create ( features : instance ); with draft; }
+}
+
+define behavior for ZR_TB_LOI_H_DTL //alias <alias_name>
+persistent table ztb_loi_h_dtl
+draft table ztb_loi_h_dtl_d
+lock dependent by _hdr
+authorization dependent by _hdr
+//etag master LastChangedAt
+{
+  update;
+  delete;
+  field ( readonly ) LoaiHang, LoaiLoi,
+  CreatedBy,
+  CreatedAt,
+  LastChangedBy,
+  LastChangedAt;
+
+  field ( readonly : update ) ErrorCode;
+
+  association _hdr { with draft; }
+
+  mapping for ztb_loi_h_dtl
+    {
+      LoaiHang      = loai_hang;
+      LoaiLoi       = loai_loi;
+      errordesc     = errordesc;
+      bangi         = bangi;
+      bangii        = bangii;
+      ErrorCode     = error_code;
+      CreatedBy     = CREATED_BY;
+      CreatedAt     = CREATED_AT;
+      LastChangedBy = LAST_CHANGED_BY;
+      LastChangedAt = LAST_CHANGED_AT;
+    }
+}

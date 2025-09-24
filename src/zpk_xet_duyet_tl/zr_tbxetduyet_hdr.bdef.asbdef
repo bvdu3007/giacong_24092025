@@ -1,0 +1,249 @@
+managed implementation in class ZBP_R_TBXETDUYET_HDR unique;
+strict ( 2 );
+//with privileged mode;
+with draft;
+extensible;
+define behavior for ZR_TBXETDUYET_HDR alias ZrTbxetduyetHdr
+//persistent table ZTB_XETDUYET_HDR
+extensible
+draft table ztbxtduyet_hdr_d
+etag master LastChangedAt
+lock master total etag LastChangedAt
+authorization master ( global )
+with unmanaged save
+{
+  field ( readonly )
+  HdrID,
+  Zperdesc,
+  trangthai,
+  zstatus,
+  CreatedBy,
+  CreatedAt,
+  LastChangedBy,
+  LastChangedAt,
+  sumdatetime;
+
+//  field ( features : instance ) trangthai ;
+
+  field ( numbering : managed )
+  HdrID;
+
+  field ( mandatory : create )
+  Zper, Bukrs, lan;
+
+  field ( readonly : update )
+  Zper, Bukrs;
+  create;
+  update ( features : instance );
+  delete ( features : instance );
+
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Edit;
+  draft action Resume;
+  //  draft determine action Prepare;
+
+  mapping for ztb_xetduyet_hdr corresponding extensible
+    {
+      HdrID         = hdr_id;
+      Zper          = zper;
+      Bukrs         = bukrs;
+      lan          = lan;
+      Ct05          = ct05;
+      Zperdesc      = zperdesc;
+      Zstatus       = zstatus;
+      sumdate       = sumdate;
+      sumdatetime   = sumdatetime;
+      CreatedBy     = created_by;
+      CreatedAt     = created_at;
+      LastChangedBy = last_changed_by;
+      LastChangedAt = last_changed_at;
+    }
+  draft determine action Prepare { validation checkInputFields_Save; }
+  validation checkInputFields_Save on save { create; field Zper; }
+  action ( features : instance ) UpdateData result [1] $self;
+  action ( features : instance ) PheDuyet result [1] $self;
+  action ( features : instance ) HuyPheDuyet result [1] $self;
+  association _dtl { create ( features : instance ); with draft; }
+
+}
+
+define behavior for ZR_TBXETDUYET_DTL alias ZrTbxetduyetDtl
+//persistent table ZTB_XETDUYET_DTL
+draft table ztbxtduyet_dtl_d
+lock dependent by _hdr
+authorization dependent by _hdr
+with unmanaged save
+{
+  field ( readonly )
+  HdrID,
+  DtlID,
+  CreatedBy,
+  CreatedAt,
+  LastChangedBy,
+  LastChangedAt,
+  Supplier,
+  SupplierName,
+  KieuTui,
+  TgianHdong,
+  Ct04,
+  Ct05,
+  Ct06,
+  Ct07,
+  Ct08,
+  Ct09,
+  Ct10,
+  Ct11,
+  Ct12,
+  Ct13,
+  Ct14,
+  Ct15,
+  Ct16,
+  Ct17,
+  Ct18,
+  Ct19,
+  Ct20,
+  Ct21,
+  Ct22,
+  Ct23,
+  ct23a,
+  Ct24,
+  Ct25,
+  Ct26,
+  Ct27,
+  Ct28,
+  Ct29a,
+  Ct29,
+  Ct291,
+  Ct292,
+  Ct30,
+  Ct31,
+  Ct32,
+  Ct33,
+  Ct34,
+  Ct35,
+  Ct36,
+  Ct37,
+  Ct38,
+  Ct38a,
+  Ct39,
+  ct39a,
+  ct39a1,
+  ct401,
+  ct40a,
+  ct40c,
+  ct40d,
+  ct40e,
+  ct40f,
+  Ct41,
+  Ct42,
+  Ct43,
+  Ct44,
+  Ct45,
+  Ct46,
+  Ct47,
+  Ct48,
+  Ct49,
+  Ct50,
+  Ct51,
+  Ct52,
+  Ct53,
+  ct531,
+  Ct55
+  ;
+
+  field ( numbering : managed )
+  DtlID;
+
+  update ( features : instance ) ;
+  delete ( features : instance );
+
+  mapping for ztb_xetduyet_dtl corresponding
+    {
+      HdrID         = hdr_id;
+      DtlID         = dtl_id;
+      Supplier      = supplier;
+      KieuTui       = kieu_tui;
+      TgianHdong    = tgian_hdong;
+      Ct04          = ct04;
+      Ct05          = ct05;
+      Ct06          = ct06;
+      Ct07          = ct07;
+      Ct08          = ct08;
+      Ct09          = ct09;
+      Ct10          = ct10;
+      Ct11          = ct11;
+      Ct12          = ct12;
+      Ct13          = ct13;
+      Ct14          = ct14;
+      Ct15          = ct15;
+      Ct16          = ct16;
+      Ct17          = ct17;
+      Ct18          = ct18;
+      Ct19          = ct19;
+      Ct20          = ct20;
+      Ct21          = ct21;
+      Ct22          = ct22;
+      Ct23          = ct23;
+      Ct23a          = ct23a;
+      Ct24          = ct24;
+      Ct25          = ct25;
+      Ct26          = ct26;
+      Ct27          = ct27;
+      Ct28          = ct28;
+      Ct29a         = ct29a;
+      Ct29          = ct29;
+      Ct291         = ct291;
+      Ct292         = ct292;
+      Ct30          = ct30;
+      Ct31          = ct31;
+      Ct32          = ct32;
+      Ct33          = ct33;
+      Ct34          = ct34;
+      Ct35          = ct35;
+      Ct36          = ct36;
+      Ct37          = ct37;
+      Ct38          = ct38;
+      Ct38a         = ct38a;
+      Ct39          = ct39;
+      Ct39a          = ct39a;
+      ct39a1       = ct39a1;
+      Ct40          = ct40;
+      Ct41          = ct41;
+      Ct42          = ct42;
+      Ct43          = ct43;
+      Ct44          = ct44;
+      Ct45          = ct45;
+      Ct46          = ct46;
+      Ct47          = ct47;
+      Ct48          = ct48;
+      Ct49          = ct49;
+      Ct50          = ct50;
+      Ct411         = ct411;
+      Ct421         = ct421;
+      Ct431         = ct431;
+      Ct441         = ct441;
+      Ct451         = ct451;
+      Ct461         = ct461;
+      Ct471         = ct471;
+      Ct481         = ct481;
+      Ct491         = ct491;
+      Ct501         = ct501;
+      Ct51          = ct51;
+      Ct52          = ct52;
+      Ct53          = ct53;
+      Ct531          = ct531;
+      Ghichu        = ghichu;
+      Ct55          = ct55;
+      Ct56          = ct56;
+      Ct57          = ct57;
+      Ct58          = ct58;
+      Ct59          = ct59;
+      Ct60          = ct60;
+      CreatedBy     = created_by;
+      CreatedAt     = created_at;
+      LastChangedBy = last_changed_by;
+      LastChangedAt = last_changed_at;
+    } association _hdr { with draft; }
+
+}

@@ -1,0 +1,11 @@
+@EndUserText: {
+  label: 'Service Definition for ZC_TBMAT_TYPE'
+}
+@ObjectModel: {
+  leadingEntity: {
+    name: 'ZC_TBMAT_TYPE'
+  }
+}
+define service ZUI_TBMAT_TYPE_O4 provider contracts odata_v4_ui {
+  expose ZC_TBMAT_TYPE;
+}

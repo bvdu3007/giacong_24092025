@@ -1,0 +1,34 @@
+{
+  "formatVersion": "2",
+  "header": {
+    "description": "{{appDescription}}",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "appType": "ui5",
+    "catalogId": "SAP_TC_UI5_REPO_UIAD",
+    "targetMappingTitle": "Biên Bản Gia Công"
+  },
+  "ui5AppDetails": {
+    "appId": "bbgiacong"
+  },
+  "navigation": {
+    "targetMappingId": "UI5R_A8EFB0B7E59F06698C9DB90AEF9AC9E21BF3E17A_TM",
+    "semanticObject": "bbgiacong",
+    "action": "manage",
+    "desktop": true,
+    "tablet": true,
+    "phone": true
+  },
+  "tiles": [
+    {
+      "id": "UI5R_A8EFB0B7E59F06698C9DB90AEF9AC9E21BF3E17A_AL",
+      "tileType": "static",
+      "isDefault": true,
+      "standard": {
+        "title": "Biên Bản Gia Công"
+      }
+    }
+  ]
+}

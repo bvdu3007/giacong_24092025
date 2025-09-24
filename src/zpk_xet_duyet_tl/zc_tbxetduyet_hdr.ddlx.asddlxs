@@ -1,0 +1,156 @@
+@Metadata.layer: #CORE
+@UI.headerInfo.title.type: #STANDARD
+@UI.headerInfo.title.value: 'Zper'
+@UI.headerInfo.description.type: #STANDARD
+@UI.headerInfo.description.value: 'Zper'
+annotate view ZC_TBXETDUYET_HDR with
+{
+  @UI.facet: [ {
+    label: 'General Information',
+    id: 'GeneralInfo',
+    purpose: #STANDARD,
+    position: 10 ,
+    type: #IDENTIFICATION_REFERENCE
+  },
+
+  {
+      id: 'Items',
+      purpose: #STANDARD,
+      position: 100,
+      label: 'Chi tiết',
+      type: #LINEITEM_REFERENCE,
+      targetElement: '_dtl'
+    }
+   ]
+
+  @UI.identification: [ {
+    position: 20
+  } ]
+  @UI.lineItem: [ {
+    position: 20
+  }, { type: #FOR_ACTION, dataAction: 'UpdateData', label: 'Cập nhật thông tin' }
+  , { type: #FOR_ACTION, dataAction: 'PheDuyet', label: 'Phê duyệt' }
+  , { type: #FOR_ACTION, dataAction: 'HuyPheDuyet', label: 'Hủy phê duyệt' }  ]
+  @UI.selectionField: [ {
+    position: 20
+  } ]
+  Zper;
+
+  @UI.identification: [ {
+    position: 22
+  } ]
+  @UI.lineItem: [ {
+    position: 22
+  } ]
+  @UI.selectionField: [ {
+    position: 22
+  } ]
+  Zperdesc;
+
+  @UI.identification: [ {
+  position: 25
+  } ]
+  @UI.lineItem: [ {
+    position: 25
+  } ]
+  @UI.selectionField: [ {
+    position: 25
+  } ]
+  Bukrs;
+
+  @UI.identification: [ {
+  position: 27
+  } ]
+  @UI.lineItem: [ {
+    position: 27
+  } ]
+  @UI.selectionField: [ {
+    position: 27
+  } ]
+  lan;
+
+  @UI.identification: [ {
+    position: 30
+  } ]
+  @UI.lineItem: [ {
+    position: 30
+  } ]
+  @UI.selectionField: [ {
+    position: 30
+  } ]
+  trangthai;
+
+  //  @UI.identification: [ {
+  //    position: 40
+  //  } ]
+  //  @UI.lineItem: [ {
+  //    position: 40
+  //  } ]
+  //  @UI.selectionField: [ {
+  //    position: 40
+  //  } ]
+  //  Zstatus;
+
+  @EndUserText.label: 'Số ngày làm việc trong kỳ'
+  @UI.identification: [ {
+  position: 45
+  } ]
+  @UI.lineItem: [ {
+    position: 45
+  } ]
+  Ct05;
+
+  @EndUserText.label: 'Thời gian cập nhật thông tin gia công'
+  @UI.identification: [ {
+  position: 47
+  } ]
+  @UI.lineItem: [ {
+    position: 47
+  } ]
+  SumDateTime;
+
+  @UI.identification: [ {
+    position: 50
+  } ]
+  @UI.lineItem: [ {
+    position: 50
+  } ]
+  @UI.selectionField: [ {
+    position: 50
+  } ]
+  CreatedBy;
+
+  @UI.identification: [ {
+    position: 60
+  } ]
+  @UI.lineItem: [ {
+    position: 60
+  } ]
+  @UI.selectionField: [ {
+    position: 60
+  } ]
+  CreatedAt;
+
+  @UI.identification: [ {
+    position: 70
+  } ]
+  @UI.lineItem: [ {
+    position: 70
+  } ]
+  @UI.selectionField: [ {
+    position: 70
+  } ]
+  LastChangedBy;
+
+  @UI.identification: [ {
+    position: 80
+  } ]
+  @UI.lineItem: [ {
+    position: 80
+  } ]
+  @UI.selectionField: [ {
+    position: 80
+  } ]
+  LastChangedAt;
+
+}

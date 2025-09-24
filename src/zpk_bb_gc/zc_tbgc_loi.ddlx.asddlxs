@@ -1,0 +1,152 @@
+@Metadata.layer: #CORE
+@UI.headerInfo.title.type: #STANDARD
+@UI.headerInfo.title.value: 'HdrID'
+@UI.headerInfo.description.type: #STANDARD
+@UI.headerInfo.description.value: 'HdrID'
+
+
+@UI.presentationVariant: [ {
+  qualifier: 'pVariant',
+  sortOrder: [{ by: 'ErrorCode', direction: #DESC }],
+  groupBy: [ 'LoaiLoi' ],
+  visualizations: [{ type: #AS_LINEITEM }]    
+} ] 
+
+annotate view ZC_TBGC_LOI with
+{
+  
+  @UI.facet: [ {
+    label: 'General Information', 
+    id: 'GeneralInfo', 
+    purpose: #STANDARD, 
+    position: 10 , 
+    type: #IDENTIFICATION_REFERENCE
+  } ]
+  
+  
+  @UI.identification: [ {
+    position: 40 
+  } ]
+  @UI.lineItem: [ {
+    position: 40 
+  } ]
+  @UI.selectionField: [ {
+    position: 40 
+  } ]
+  LoaiLoi;
+  
+  @UI.identification: [ {
+    position: 50 
+  } ]
+  @UI.lineItem: [ {
+    position: 50 
+  } ]
+  @UI.selectionField: [ {
+    position: 50 
+  } ]
+  ErrorCode;
+  
+  @UI.identification: [ {
+    position: 60 
+  } ]
+  @UI.lineItem: [ {
+    position: 60 
+  } ]
+  @UI.selectionField: [ {
+    position: 60 
+  } ]
+  Errordesc;
+  
+  @EndUserText.label: 'Số lỗi'
+  @UI.identification: [ {
+    position: 70 , 
+    label: 'Số lỗi'
+  } ]
+  @UI.lineItem: [ {
+    position: 70 , 
+    label: 'Số lỗi'
+  } ]
+  @UI.selectionField: [ {
+    position: 70 
+  } ]
+  SlLoi;
+  
+    @EndUserText.label: 'Tỉ lệ lỗi'
+  @UI.identification: [ {
+    position: 75 , 
+    label: 'Tỉ lệ lỗi'
+  } ]
+  @UI.lineItem: [ {
+    position: 75 , 
+    label: 'Tỉ lệ lỗi'
+  } ]
+  @UI.selectionField: [ {
+    position: 75 
+  } ]
+  tile;
+  
+  @UI.identification: [ {
+    position: 80 
+  } ]
+  @UI.lineItem: [ {
+    position: 80 
+  } ]
+  @UI.selectionField: [ {
+    position: 80 
+  } ]
+  Bangi;
+  
+  @EndUserText.label: 'Lỗi bảng I'
+  @UI.identification: [ {
+    position: 90 , 
+    label: 'Lỗi bảng I'
+  } ]
+  @UI.lineItem: [ {
+    position: 90 , 
+    label: 'Lỗi bảng I'
+  } ]
+  @UI.selectionField: [ {
+    position: 90 
+  } ]
+  CheckBangi;
+  
+  @UI.identification: [ {
+    position: 100 
+  } ]
+  @UI.lineItem: [ {
+    position: 100 
+  } ]
+  @UI.selectionField: [ {
+    position: 100 
+  } ]
+  Bangii;
+  
+  @EndUserText.label: 'Lỗi bảng II'
+  @UI.identification: [ {
+    position: 110 , 
+    label: 'Lỗi bảng II'
+  } ]
+  @UI.lineItem: [ {
+    position: 110 , 
+    label: 'Lỗi bảng II'
+  } ]
+  @UI.selectionField: [ {
+    position: 110 
+  } ]
+  CheckBangii;
+  
+  @EndUserText.label: 'Ghi chú'
+  @UI.identification: [ {
+    position: 120 , 
+    label: 'Ghi chú'
+  } ]
+  @UI.lineItem: [ {
+    position: 120 , 
+    label: 'Ghi chú'
+  } ]
+  @UI.selectionField: [ {
+    position: 120 
+  } ]
+  GhiChu;
+  
+}

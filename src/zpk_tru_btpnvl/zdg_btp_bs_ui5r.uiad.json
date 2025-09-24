@@ -1,0 +1,34 @@
+{
+  "formatVersion": "2",
+  "header": {
+    "description": "An SAP Fiori application.",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "appType": "ui5",
+    "catalogId": "SAP_TC_UI5_REPO_UIAD",
+    "targetMappingTitle": "Bảng đơn giá trừ tiền BTP bổ sung"
+  },
+  "ui5AppDetails": {
+    "appId": "zdgbtpbs"
+  },
+  "navigation": {
+    "targetMappingId": "UI5R_1EC1919731976B0930FA6D93B3C6D5FAEC29AACF_TM",
+    "semanticObject": "zdg_btp_bs",
+    "action": "manage",
+    "desktop": true,
+    "tablet": true,
+    "phone": true
+  },
+  "tiles": [
+    {
+      "id": "UI5R_1EC1919731976B0930FA6D93B3C6D5FAEC29AACF_AL",
+      "tileType": "static",
+      "isDefault": true,
+      "standard": {
+        "title": "Bảng đơn giá trừ tiền BTP bổ sung"
+      }
+    }
+  ]
+}

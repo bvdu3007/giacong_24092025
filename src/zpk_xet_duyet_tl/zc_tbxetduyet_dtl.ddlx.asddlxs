@@ -1,0 +1,965 @@
+@Metadata.layer: #CORE
+@UI.headerInfo.title.type: #STANDARD
+@UI.headerInfo.title.value: 'Supplier'
+@UI.headerInfo.description.type: #STANDARD
+@UI.headerInfo.description.value: 'Supplier'
+annotate view ZC_TBXETDUYET_DTL with
+{
+  @UI.facet: [ {
+    label: 'Thông tin chung', 
+    id: 'GeneralInfo', 
+    purpose: #STANDARD, 
+    position: 10 , 
+    type: #IDENTIFICATION_REFERENCE
+  }, {
+      id: 'GR1',
+      purpose: #STANDARD,
+      position: 20,
+      label: 'Số lượng và tỷ lệ lỗi',
+      type: #FIELDGROUP_REFERENCE,
+      targetQualifier: 'GR1'
+    },
+    {
+      id: 'GR2',
+      purpose: #STANDARD,
+      position: 30,
+      label: 'Tiền gia công và tiền trừ',
+      type: #FIELDGROUP_REFERENCE,
+      targetQualifier: 'GR2'
+    },
+
+  {
+      id: 'GR3',
+      purpose: #STANDARD,
+      position: 40,
+      label: 'Trừ khác',
+      type: #FIELDGROUP_REFERENCE,
+      targetQualifier: 'GR3'
+    },
+
+  {
+      id: 'GR4',
+      purpose: #STANDARD,
+      position: 50,
+      label: 'Tỷ lệ trừ tiền',
+      type: #FIELDGROUP_REFERENCE,
+      targetQualifier: 'GR4'
+    }
+    ,
+
+  {
+      id: 'GR5',
+      purpose: #STANDARD,
+      position: 60,
+      label: 'Tổng tiền',
+      type: #FIELDGROUP_REFERENCE,
+      targetQualifier: 'GR5'
+    }
+  
+   ]
+  
+  
+  @EndUserText.label: 'Mã nhà gia công'
+  @UI.identification: [ {
+    position: 30 
+  } ]
+  @UI.lineItem: [ {
+    position: 30 
+  } ]
+  @UI.selectionField: [ {
+    position: 30 
+  } ]
+  Supplier;
+  
+  @EndUserText.label: 'Tên nhà gia công'
+    @UI.identification: [ {
+    position: 35 
+  } ]
+  @UI.lineItem: [ {
+    position: 35 
+  } ]
+  SupplierName;
+  
+  @EndUserText.label: 'Kiểu túi'
+  @UI.identification: [ {
+    position: 40 , 
+    label: 'Kiểu túi'
+  } ]
+  @UI.lineItem: [ {
+    position: 40 , 
+    label: 'Kiểu túi'
+  } ]
+  @UI.selectionField: [ {
+    position: 40 
+  } ]
+  KieuTui;
+  
+  @EndUserText.label: 'Thời gian hoạt động'
+  @UI.identification: [ {
+    position: 50 , 
+    label: 'Thời gian hoạt động'
+  } ]
+  @UI.lineItem: [ {
+    position: 50 , 
+    label: 'Thời gian hoạt động'
+  } ]
+  @UI.selectionField: [ {
+    position: 50 
+  } ]
+  TgianHdong;
+  
+  @EndUserText.label: 'Tổng SL kiểm thực tế (SL hàng thực nhập)'
+  @UI.identification: [ {
+    position: 60 , 
+    label: 'Tổng SL kiểm thực tế (SL hàng thực nhập)'
+  } ]
+  @UI.lineItem: [ {
+    position: 60 , 
+    label: 'Tổng SL kiểm thực tế (SL hàng thực nhập)'
+  } ]
+  @UI.selectionField: [ {
+    position: 60 
+  } ]
+  Ct04;
+  
+  @EndUserText.label: 'Số ngày làm việc trong kỳ'
+  @UI.identification: [ {
+    position: 70 , 
+    label: 'Số ngày làm việc trong kỳ'
+  } ]
+  @UI.lineItem: [ {
+    position: 70 , 
+    label: 'Số ngày làm việc trong kỳ'
+  } ]
+  @UI.selectionField: [ {
+    position: 70 
+  } ]
+  Ct05;
+  
+  @EndUserText.label: 'Sản lượng/ngày'
+  @UI.identification: [ {
+    position: 80 , 
+    label: 'Sản lượng/ngày'
+  } ]
+  @UI.lineItem: [ {
+    position: 80 , 
+    label: 'Sản lượng/ngày'
+  } ]
+  @UI.selectionField: [ {
+    position: 80 
+  } ]
+  Ct06;
+  
+  @EndUserText.label: 'Tổng số lượng hàng đạt'
+  @UI.lineItem: [ {
+    position: 90 , 
+    label: 'Tổng số lượng hàng đạt'
+  } ]
+  @UI.selectionField: [ {
+    position: 90 
+  } ]
+  @UI.fieldGroup: [ { qualifier: 'GR1', position: 10} ]
+  Ct07;
+  
+  @EndUserText.label: 'Tổng số lượng hàng không đạt Bảng I'
+
+  @UI.lineItem: [ {
+    position: 100 , 
+    label: 'Tổng số lượng hàng không đạt Bảng I'
+  } ]
+  @UI.selectionField: [ {
+    position: 100 
+  } ]
+  @UI.fieldGroup: [ { qualifier: 'GR1', position: 20} ]
+  Ct08;
+  
+  @EndUserText.label: 'Tổng số lượng hàng không đạt Bảng II (Lỗi nghiêm trọng)'
+
+  @UI.lineItem: [ {
+    position: 110 , 
+    label: 'Tổng số lượng hàng không đạt Bảng II (Lỗi nghiêm trọng)'
+  } ]
+  @UI.selectionField: [ {
+    position: 110 
+  } ]
+  @UI.fieldGroup: [ { qualifier: 'GR1', position: 30} ]
+  Ct09;
+  
+  @EndUserText.label: 'Tổng số lượng hàng không đạt Bảng II (Lỗi đặc biệt nghiêm trọng)'
+
+  @UI.lineItem: [ {
+    position: 120 , 
+    label: 'Tổng số lượng hàng không đạt Bảng II (Lỗi đặc biệt nghiêm trọng)'
+  } ]
+  @UI.selectionField: [ {
+    position: 120 
+  } ]
+  @UI.fieldGroup: [ { qualifier: 'GR1', position: 40} ]
+  Ct10;
+  
+  @EndUserText.label: 'Tổng số lượng hàng không đạt không xuất được cont - Lỗi do công ty'
+
+  @UI.lineItem: [ {
+    position: 130 , 
+    label: 'Tổng số lượng hàng không đạt không xuất được cont - Lỗi do công ty'
+  } ]
+  @UI.selectionField: [ {
+    position: 130 
+  } ]
+  @UI.fieldGroup: [ { qualifier: 'GR1', position: 50} ]
+  Ct11;
+  
+  @EndUserText.label: 'Tổng số lượng hàng không đạt không xuất được cont - Lỗi do gia công'
+
+  @UI.lineItem: [ {
+    position: 140 , 
+    label: 'Tổng số lượng hàng không đạt không xuất được cont - Lỗi do gia công'
+  } ]
+  @UI.selectionField: [ {
+    position: 140 
+  } ]
+  @UI.fieldGroup: [ { qualifier: 'GR1', position: 60} ]
+  Ct12;
+  
+  @EndUserText.label: 'Lỗi hàng loạt từ 1000 túi /mã'
+  @UI.lineItem: [ {
+    position: 150 , 
+    label: 'Lỗi hàng loạt từ 1000 túi /mã'
+  } ]
+  @UI.selectionField: [ {
+    position: 150 
+  } ]
+  @UI.fieldGroup: [ { qualifier: 'GR1', position: 70} ]
+  Ct13;
+  
+  @EndUserText.label: 'Hàng trả chậm sau cont k.xuất được hàng'
+
+  @UI.lineItem: [ {
+    position: 160 , 
+    label: 'Hàng trả chậm sau cont k.xuất được hàng'
+  } ]
+  @UI.selectionField: [ {
+    position: 160 
+  } ]
+  @UI.fieldGroup: [ { qualifier: 'GR1', position: 80} ]
+  Ct14;
+  
+  @EndUserText.label: 'Hàng trả chậm sau cont xuất được hàng'
+
+  @UI.lineItem: [ {
+    position: 170 , 
+    label: 'Hàng trả chậm sau cont xuất được hàng'
+  } ]
+  @UI.selectionField: [ {
+    position: 170 
+  } ]
+  @UI.fieldGroup: [ { qualifier: 'GR1', position: 90} ]
+  Ct15;
+  
+  @EndUserText.label: 'Hàng TP trả về phải kiểm tra 100% do lỗi gia công'
+
+  @UI.lineItem: [ {
+    position: 180 , 
+    label: 'Hàng TP trả về phải kiểm tra 100% do lỗi gia công'
+  } ]
+  @UI.selectionField: [ {
+    position: 180 
+  } ]
+  @UI.fieldGroup: [ { qualifier: 'GR1', position: 100} ]
+  Ct16;
+  
+  @EndUserText.label: 'Hàng TP trả về phải kiểm tra 100% do lỗi C.ty và hàng KK'
+    @UI.lineItem: [ {
+    position: 190 , 
+    label: 'Hàng TP trả về phải kiểm tra 100% do lỗi C.ty và hàng KK'
+  } ]
+  @UI.selectionField: [ {
+    position: 190 
+  } ]
+   @UI.fieldGroup: [ { qualifier: 'GR1', position: 110} ]
+  Ct17;
+  
+  @EndUserText.label: ' Tổng số lượng hàng kém CL>10% '
+  @UI.lineItem: [ {
+    position: 200 , 
+    label: ' Tổng số lượng hàng kém CL>10% '
+  } ]
+  @UI.selectionField: [ {
+    position: 200 
+  } ]
+   @UI.fieldGroup: [ { qualifier: 'GR1', position: 120} ]
+  Ct18;
+  
+  @EndUserText.label: 'Tỷ lệ hàng không đạt Bảng I'
+  @UI.lineItem: [ {
+    position: 210 , 
+    label: 'Tỷ lệ hàng không đạt Bảng I'
+  } ]
+  @UI.selectionField: [ {
+    position: 210 
+  } ]
+   @UI.fieldGroup: [ { qualifier: 'GR1', position: 130} ]
+  Ct19;
+  
+  @EndUserText.label: 'Tỷ lệ hàng không đạt bảng II (lỗi nghiêm trọng)'
+  @UI.lineItem: [ {
+    position: 220 , 
+    label: 'Tỷ lệ hàng không đạt bảng II (lỗi nghiêm trọng)'
+  } ]
+  @UI.selectionField: [ {
+    position: 220 
+  } ]
+   @UI.fieldGroup: [ { qualifier: 'GR1', position: 140} ]
+  Ct20;
+  
+  @EndUserText.label: 'Tỷ lệ hàng không đạt bảng II (lỗi đặc biệt nghiêm trọng)'
+  @UI.lineItem: [ {
+    position: 230 , 
+    label: 'Tỷ lệ hàng không đạt bảng II (lỗi đặc biệt nghiêm trọng)'
+  } ]
+  @UI.selectionField: [ {
+    position: 230 
+  } ]
+   @UI.fieldGroup: [ { qualifier: 'GR1', position: 150} ]
+  Ct21;
+  
+  @EndUserText.label: 'Tỷ lệ hàng kém chất lượng >10%'
+  @UI.lineItem: [ {
+    position: 240 , 
+    label: ' Tỷ lệ hàng kém chất lượng >10% '
+  } ]
+  @UI.selectionField: [ {
+    position: 240 
+  } ]
+   @UI.fieldGroup: [ { qualifier: 'GR1', position: 160} ]
+  Ct22;
+  
+  @EndUserText.label: 'Tổng tiền gia công theo đơn giá'
+  @UI.lineItem: [ {
+    position: 250 , 
+    label: 'Tổng tiền gia công theo đơn giá'
+  } ]
+  @UI.selectionField: [ {
+    position: 250 
+  } ]
+   @UI.fieldGroup: [ { qualifier: 'GR2', position: 10} ]
+  Ct23;
+  
+  @EndUserText.label: 'Tổng tiền gia công theo công đoạn thực tế'
+
+  @UI.lineItem: [ {
+    position: 255 , 
+    label: 'Tổng tiền gia công theo công đoạn thực tế'
+  } ]
+  @UI.selectionField: [ {
+    position: 255 
+  } ]
+  @UI.fieldGroup: [ { qualifier: 'GR2', position: 20} ]
+  ct23a;
+  
+  @EndUserText.label: 'Tổng tiền vận chuyển '
+  @UI.lineItem: [ {
+    position: 260 , 
+    label: 'Tổng tiền vận chuyển '
+  } ]
+  @UI.selectionField: [ {
+    position: 260 
+  } ]
+  @UI.fieldGroup: [ { qualifier: 'GR2', position: 30} ]
+  Ct24;
+  
+  @EndUserText.label: 'Trừ tiền hàng không đạt bảng II (Lỗi nghiêm trọng - (100%)' 
+  @UI.lineItem: [ {
+    position: 270 , 
+    label: 'Trừ tiền hàng không đạt bảng II (Lỗi nghiêm trọng - (100%)'
+  } ]
+  @UI.selectionField: [ {
+    position: 270 
+  } ]
+  @UI.fieldGroup: [ { qualifier: 'GR2', position: 40} ]
+  Ct25;
+  
+  @EndUserText.label: 'SD-Trừ tiền hàng không đạt bảng II (Lỗi nghiêm trọng)'
+  @UI.lineItem: [ {
+    position: 280 , 
+    label: 'SD-Trừ tiền hàng không đạt bảng II (Lỗi nghiêm trọng)'
+  } ]
+  @UI.selectionField: [ {
+    position: 280 
+  } ]
+  @UI.fieldGroup: [ { qualifier: 'GR2', position: 50} ]
+  Ct26;
+  
+  @EndUserText.label: 'Trừ tiền hàng không đạt bảng II (Lỗi đặc biệt nghiêm trọng- (100%)'
+  @UI.lineItem: [ {
+    position: 290 , 
+    label: 'Trừ tiền hàng không đạt bảng II (Lỗi đặc biệt nghiêm trọng- (100%)'
+  } ]
+  @UI.selectionField: [ {
+    position: 290 
+  } ]
+  @UI.fieldGroup: [ { qualifier: 'GR2', position: 60} ]
+  Ct27;
+  
+  @EndUserText.label: 'SD-Trừ tiền hàng không đạt bảng II (Lỗi đặc biệt nghiêm trọng- (100%))'
+  @UI.lineItem: [ {
+    position: 300 , 
+    label: 'SD-Trừ tiền hàng không đạt bảng II (Lỗi đặc biệt nghiêm trọng- (100%))'
+  } ]
+  @UI.selectionField: [ {
+    position: 300 
+  } ]
+  @UI.fieldGroup: [ { qualifier: 'GR2', position: 70} ]
+  Ct28;
+  
+    @EndUserText.label: 'Trừ tiền hàng kém chất lượng > 10% '
+
+  @UI.lineItem: [ {
+    position: 310 , 
+    label: 'Trừ tiền hàng kém chất lượng > 10% '
+  } ]
+  @UI.selectionField: [ {
+    position: 310 
+  } ]
+  @UI.fieldGroup: [ { qualifier: 'GR2', position: 80} ]
+  Ct29a;
+  
+  @EndUserText.label: 'SD-Trừ tiền hàng kém CL >10%'
+  @UI.lineItem: [ {
+    position: 310 , 
+    label: 'SD-Trừ tiền hàng kém CL >10%'
+  } ]
+  @UI.selectionField: [ {
+    position: 310 
+  } ]
+  @UI.fieldGroup: [ { qualifier: 'GR2', position: 90} ]
+  Ct29;
+  
+//  @EndUserText.label: 'Trừ tiền chỉ thiếu'
+//  @UI.lineItem: [ {
+//    position: 320 , 
+//    label: 'Trừ tiền chỉ thiếu'
+//  } ]
+//  @UI.selectionField: [ {
+//    position: 320 
+//  } ]
+//  @UI.fieldGroup: [ { qualifier: 'GR2', position: 100} ]
+//  Ct291;
+//  
+//  @EndUserText.label: 'SD-Trừ tiền chỉ thiếu'
+//  @UI.lineItem: [ {
+//    position: 330 , 
+//    label: 'SD-Trừ tiền chỉ thiếu'
+//  } ]
+//  @UI.selectionField: [ {
+//    position: 330 
+//  } ]
+//    @UI.fieldGroup: [ { qualifier: 'GR2', position: 110} ]
+//  Ct292;
+    
+      @EndUserText.label: 'Trừ tiền BTP thiếu (100%)'
+  @UI.lineItem: [ {
+    position: 340 , 
+    label: 'Trừ tiền BTP thiếu (100%)'
+  } ]
+  @UI.selectionField: [ {
+    position: 340 
+  } ]
+    @UI.fieldGroup: [ { qualifier: 'GR2', position: 120} ]
+  Ct31;
+  
+    @EndUserText.label: 'Trừ tiền BTP thiếu (sau duyệt)'
+  @UI.lineItem: [ {
+    position: 350 , 
+    label: 'Trừ tiền BTP thiếu (sau duyệt)'
+  } ]
+  @UI.selectionField: [ {
+    position: 350 
+  } ]
+    @UI.fieldGroup: [ { qualifier: 'GR2', position: 130} ]
+  Ct32;
+  
+  @EndUserText.label: 'Trừ tiền trả TP sau cont (100%)'
+  @UI.lineItem: [ {
+    position: 370 , 
+    label: 'Trừ tiền trả TP sau cont (100%)'
+  } ]
+  @UI.selectionField: [ {
+    position: 370 
+  } ]
+    @UI.fieldGroup: [ { qualifier: 'GR2', position: 140} ]
+  Ct33;
+  
+  @EndUserText.label: 'SD-Trừ tiền trả TP sau cont'
+  @UI.lineItem: [ {
+    position: 380 , 
+    label: 'SD-Trừ tiền trả TP sau cont'
+  } ]
+  @UI.selectionField: [ {
+    position: 380 
+  } ]
+    @UI.fieldGroup: [ { qualifier: 'GR2', position: 150} ]
+  Ct34;
+  
+  @EndUserText.label: 'Trừ tiền Hàng trả chậm sau KH nhưng xuất được hàng'
+  @UI.lineItem: [ {
+    position: 390 , 
+    label: 'Trừ tiền Hàng trả chậm sau KH nhưng xuất được hàng'
+  } ]
+  @UI.selectionField: [ {
+    position: 390 
+  } ]
+    @UI.fieldGroup: [ { qualifier: 'GR2', position: 160} ]
+  Ct35;
+  
+  @EndUserText.label: 'SD-Trừ tiền Hàng trả chậm sau KH nhưng xuất được hàng'
+  @UI.lineItem: [ {
+    position: 400 , 
+    label: 'SD-Trừ tiền Hàng trả chậm sau KH nhưng xuất được hàng'
+  } ]
+  @UI.selectionField: [ {
+    position: 400 
+  } ]
+    @UI.fieldGroup: [ { qualifier: 'GR2', position: 170} ]
+  Ct36;
+  
+  @EndUserText.label: 'Trừ tiền hàng không đạt không xuất được cont (100%)'
+  @UI.lineItem: [ {
+    position: 410 , 
+    label: 'Trừ tiền hàng không đạt không xuất được cont (100%)'
+  } ]
+  @UI.selectionField: [ {
+    position: 410 
+  } ]
+    @UI.fieldGroup: [ { qualifier: 'GR2', position: 180} ]
+  Ct37;
+  
+  @EndUserText.label: 'SD-Trừ tiền hàng không đạt không xuất được cont'
+  @UI.lineItem: [ {
+    position: 420 , 
+    label: 'SD-Trừ tiền hàng không đạt không xuất được cont'
+  } ]
+  @UI.selectionField: [ {
+    position: 420 
+  } ]
+    @UI.fieldGroup: [ { qualifier: 'GR2', position: 190} ]
+  Ct38;
+  
+    @EndUserText.label: 'Trừ tiền kiểm hàng phải kiểm lại 100% do lỗi gia công '
+  @UI.lineItem: [ {
+    position: 420 , 
+    label: 'Trừ tiền kiểm hàng phải kiểm lại 100% do lỗi gia công '
+  } ]
+  @UI.selectionField: [ {
+    position: 420 
+  } ]
+    @UI.fieldGroup: [ { qualifier: 'GR2', position: 200} ]
+  Ct38a;
+  
+  @EndUserText.label: 'SD-Trừ tiền kiểm hàng phải kiểm lại 100% do lỗi gia công'
+  @UI.lineItem: [ {
+    position: 430 , 
+    label: 'SD-Trừ tiền kiểm hàng phải kiểm lại 100% do lỗi gia công'
+  } ]
+  @UI.selectionField: [ {
+    position: 430 
+  } ]
+     @UI.fieldGroup: [ { qualifier: 'GR2', position: 210} ]
+  Ct39;
+  
+    @EndUserText.label: 'Tổng tiền trừ may kiểm, vận chuyển cho hàng không đạt sau cont không xuất được'
+  @UI.lineItem: [ {
+    position: 431 , 
+    label: 'Tổng tiền trừ may kiểm, vận chuyển cho hàng không đạt sau cont không xuất được'
+  } ]
+  @UI.selectionField: [ {
+    position: 431 
+  } ]
+     @UI.fieldGroup: [ { qualifier: 'GR2', position: 220} ]
+  ct39a1;
+  
+   @EndUserText.label: 'Cộng/Trừ khác'
+  @UI.lineItem: [ {
+    position: 432 , 
+    label: 'Cộng/Trừ khác'
+  } ]
+  @UI.selectionField: [ {
+    position: 432 
+  } ]
+     @UI.fieldGroup: [ { qualifier: 'GR3', position: 10} ]
+  ct40;
+  
+    @EndUserText.label: 'Tổng trừ khác (cấp bổ sung, vỏ bao, tổng tiền công đoạn may thừa/thiếu, lỗi biên bản hiện trường)'
+  @UI.lineItem: [ {
+    position: 435 , 
+    label: 'Tổng trừ khác (cấp bổ sung, vỏ bao, tổng tiền công đoạn may thừa/thiếu, lỗi biên bản hiện trường)'
+  } ]
+  @UI.selectionField: [ {
+    position: 435 
+  } ]
+  @UI.fieldGroup: [ { qualifier: 'GR3', position: 20} ]
+  ct401;
+  
+  
+  @EndUserText.label: 'Trừ tiền cấp bổ sung trong tháng'
+  @UI.lineItem: [ {
+    position: 441 , 
+    label: 'Trừ tiền cấp bổ sung trong tháng'
+  } ]
+  @UI.selectionField: [ {
+    position: 441 
+  } ]
+  @UI.fieldGroup: [ { qualifier: 'GR3', position: 30} ]
+  ct40a;
+  
+  @EndUserText.label: 'Vỏ bao'
+  @UI.lineItem: [ {
+    position: 442 , 
+    label: 'Vỏ bao'
+  } ]
+  @UI.selectionField: [ {
+    position: 442 
+  } ]
+  @UI.fieldGroup: [ { qualifier: 'GR3', position: 35} ]
+  ct40c;
+  
+  @EndUserText.label: 'Cộng/trừ tiền công đoạn may thiếu/ thừa'
+  @UI.lineItem: [ {
+    position: 443 , 
+    label: 'Cộng/trừ tiền công đoạn may thiếu/ thừa'
+  } ]
+  @UI.selectionField: [ {
+    position: 443 
+  } ]
+  @UI.fieldGroup: [ { qualifier: 'GR3', position: 40} ]
+  ct40d;
+  
+  @EndUserText.label: 'Trừ tiền lỗi biên bản hiện trường: côn trùng, dị vật'
+  @UI.lineItem: [ {
+    position: 444 , 
+    label: 'Trừ tiền lỗi biên bản hiện trường: côn trùng, dị vật'
+  } ]
+  @UI.selectionField: [ {
+    position: 444 
+  } ]
+  @UI.fieldGroup: [ { qualifier: 'GR3', position: 50} ]
+  ct40e;
+  
+  @EndUserText.label: 'Trừ tiền lỗi biên bản hiện trường: chỉ nhúng dầu'
+  @UI.lineItem: [ {
+    position: 445 , 
+    label: 'Trừ tiền lỗi biên bản hiện trường: chỉ nhúng dầu'
+  } ]
+  @UI.selectionField: [ {
+    position: 445 
+  } ]
+  @UI.fieldGroup: [ { qualifier: 'GR3', position: 60} ]
+  ct40f;
+  
+  
+  @EndUserText.label: 'Tỷ lệ trừ hàng không đạt bảng I'
+  @UI.lineItem: [ {
+    position: 450 , 
+    label: 'Tỷ lệ trừ hàng không đạt bảng I'
+  } ]
+  @UI.selectionField: [ {
+    position: 450 
+  } ]
+  @UI.fieldGroup: [ { qualifier: 'GR4', position: 10} ]
+  Ct41;
+  
+    @EndUserText.label: 'SD-Tỷ lệ trừ hàng không đạt bảng I'
+  @UI.lineItem: [ {
+    position: 455 , 
+    label: 'SD-Tỷ lệ trừ hàng không đạt bảng I'
+  } ]
+  @UI.selectionField: [ {
+    position: 455 
+  } ]
+  @UI.fieldGroup: [ { qualifier: 'GR4', position: 20} ]
+  Ct411;
+  
+  @EndUserText.label: 'Tỷ lệ trừ  hàng kém chất lượng >10%'
+  @UI.lineItem: [ {
+    position: 460 , 
+    label: 'Tỷ lệ trừ  hàng kém chất lượng >10%'
+  } ]
+  @UI.selectionField: [ {
+    position: 460 
+  } ]
+  @UI.fieldGroup: [ { qualifier: 'GR4', position: 30} ]
+  Ct42;
+  
+  @EndUserText.label: 'SD-Tỷ lệ trừ  hàng kém chất lượng >10%'
+  @UI.lineItem: [ {
+    position: 465 , 
+    label: 'SD-Tỷ lệ trừ  hàng kém chất lượng >10%'
+  } ]
+  @UI.selectionField: [ {
+    position: 465 
+  } ]
+    @UI.fieldGroup: [ { qualifier: 'GR4', position: 40} ]
+  Ct421;
+  
+  @EndUserText.label: ' Tỷ lệ trừ hàng phải kiểm lại 100% do lỗi gia công '
+  @UI.lineItem: [ {
+    position: 470 , 
+    label: ' Tỷ lệ trừ hàng phải kiểm lại 100% do lỗi gia công '
+  } ]
+  @UI.selectionField: [ {
+    position: 470 
+  } ]
+    @UI.fieldGroup: [ { qualifier: 'GR4', position: 50} ]
+  Ct43;
+  
+    @EndUserText.label: 'SD-Tỷ lệ trừ hàng phải kiểm lại 100% do lỗi gia công'
+  @UI.lineItem: [ {
+    position: 475 , 
+    label: 'SD-Tỷ lệ trừ hàng phải kiểm lại 100% do lỗi gia công '
+  } ]
+  @UI.selectionField: [ {
+    position: 475 
+  } ]
+    @UI.fieldGroup: [ { qualifier: 'GR4', position: 60} ]
+  Ct431;
+  
+  @EndUserText.label: ' Tỷ lệ trừ may, kiểm, vận chuyển hàng ko đạt. '
+
+  @UI.lineItem: [ {
+    position: 480 , 
+    label: ' Tỷ lệ trừ may, kiểm, vận chuyển hàng ko đạt. '
+  } ]
+  @UI.selectionField: [ {
+    position: 480 
+  } ]
+    @UI.fieldGroup: [ { qualifier: 'GR4', position: 70} ]
+  Ct44;
+  
+  @EndUserText.label: 'SD-Tỷ lệ trừ may, kiểm, vận chuyển hàng ko đạt. '
+  @UI.lineItem: [ {
+    position: 485 , 
+    label: 'SD-Tỷ lệ trừ may, kiểm, vận chuyển hàng ko đạt. '
+  } ]
+  @UI.selectionField: [ {
+    position: 485 
+  } ]
+    @UI.fieldGroup: [ { qualifier: 'GR4', position: 80} ]
+  Ct441;
+  
+  @EndUserText.label: 'Tỷ lệ trừ tiền Hàng trả chậm sau KH nhưng xuất được hàng'
+  @UI.lineItem: [ {
+    position: 490 , 
+    label: 'Tỷ lệ trừ tiền Hàng trả chậm sau KH nhưng xuất được hàng'
+  } ]
+  @UI.selectionField: [ {
+    position: 490 
+  } ]
+    @UI.fieldGroup: [ { qualifier: 'GR4', position: 90} ]
+  Ct45;
+  
+    @EndUserText.label: 'SD- Tỷ lệ trừ tiền Hàng trả chậm sau KH nhưng xuất được hàng'
+
+  @UI.lineItem: [ {
+    position: 495 , 
+    label: 'SD- Tỷ lệ trừ tiền Hàng trả chậm sau KH nhưng xuất được hàng'
+  } ]
+  @UI.selectionField: [ {
+    position: 495 
+  } ]
+    @UI.fieldGroup: [ { qualifier: 'GR4', position: 100} ]
+  Ct451;
+  
+  @EndUserText.label: ' Tỷ lệ trừ hàng không đạt bảng II - lỗi nghiêm trọng '
+  @UI.lineItem: [ {
+    position: 500 , 
+    label: ' Tỷ lệ trừ hàng không đạt bảng II - lỗi nghiêm trọng '
+  } ]
+  @UI.selectionField: [ {
+    position: 500 
+  } ]
+    @UI.fieldGroup: [ { qualifier: 'GR4', position: 110} ]
+  Ct46;
+  
+    @EndUserText.label: 'SD-Tỷ lệ trừ hàng không đạt bảng II - lỗi nghiêm trọng '
+  @UI.lineItem: [ {
+    position: 505 , 
+    label: 'SD-Tỷ lệ trừ hàng không đạt bảng II - lỗi nghiêm trọng '
+  } ]
+  @UI.selectionField: [ {
+    position: 505 
+  } ]
+    @UI.fieldGroup: [ { qualifier: 'GR4', position: 120} ]
+  Ct461;
+  
+  @EndUserText.label: 'Tỷ lệ trừ hàng không đạt bảng II - lỗi đặc biệt nghiêm trọng '
+  @UI.lineItem: [ {
+    position: 510 , 
+    label: 'Tỷ lệ trừ hàng không đạt bảng II - lỗi đặc biệt nghiêm trọng '
+  } ]
+  @UI.selectionField: [ {
+    position: 510 
+  } ]
+    @UI.fieldGroup: [ { qualifier: 'GR4', position: 130} ]
+  Ct47;
+  
+    @EndUserText.label: 'SD-Tỷ lệ trừ hàng không đạt bảng II - lỗi đặc biệt nghiêm trọng '
+
+  @UI.lineItem: [ {
+    position: 515 , 
+    label: 'SD-Tỷ lệ trừ hàng không đạt bảng II - lỗi đặc biệt nghiêm trọng '
+  } ]
+  @UI.selectionField: [ {
+    position: 515 
+  } ]
+    @UI.fieldGroup: [ { qualifier: 'GR4', position: 140} ]
+  Ct471;
+  
+  @EndUserText.label: ' Tỷ lệ trừ BTP thiếu '
+
+  @UI.lineItem: [ {
+    position: 520 , 
+    label: ' Tỷ lệ trừ BTP thiếu '
+  } ]
+  @UI.selectionField: [ {
+    position: 520 
+  } ]
+    @UI.fieldGroup: [ { qualifier: 'GR4', position: 150} ]
+  Ct48;
+  
+    @EndUserText.label: 'SD-Tỷ lệ trừ BTP thiếu '
+
+  @UI.lineItem: [ {
+    position: 525 , 
+    label: 'SD-Tỷ lệ trừ BTP thiếu '
+  } ]
+  @UI.selectionField: [ {
+    position: 525 
+  } ]
+    @UI.fieldGroup: [ { qualifier: 'GR4', position: 160} ]
+  Ct481;
+  
+  @EndUserText.label: ' Tỷ lệ trừ hàng TP sau cont không xuất được '
+  @UI.lineItem: [ {
+    position: 530 , 
+    label: ' Tỷ lệ trừ hàng TP sau cont không xuất được '
+  } ]
+  @UI.selectionField: [ {
+    position: 530 
+  } ]
+    @UI.fieldGroup: [ { qualifier: 'GR4', position: 170} ]
+  Ct49;
+  
+    @EndUserText.label: 'SD-Tỷ lệ trừ hàng TP sau cont không xuất được '
+
+  @UI.lineItem: [ {
+    position: 535 , 
+    label: 'SD-Tỷ lệ trừ hàng TP sau cont không xuất được '
+  } ]
+  @UI.selectionField: [ {
+    position: 535 
+  } ]
+    @UI.fieldGroup: [ { qualifier: 'GR4', position: 180} ]
+  Ct491;
+  
+  @EndUserText.label: 'Tỷ lệ trừ hàng không đạt không xuất được cont'
+  @UI.lineItem: [ {
+    position: 540 , 
+    label: 'Tỷ lệ trừ hàng không đạt không xuất được cont'
+  } ]
+  @UI.selectionField: [ {
+    position: 540 
+  } ]
+    @UI.fieldGroup: [ { qualifier: 'GR4', position: 190} ]
+  Ct50;
+  
+      @EndUserText.label: 'SD-Tỷ lệ trừ hàng không đạt không xuất được cont'
+  @UI.lineItem: [ {
+    position: 541 , 
+    label: 'SD-Tỷ lệ trừ hàng không đạt không xuất được cont'
+  } ]
+  @UI.selectionField: [ {
+    position: 541 
+  } ]
+    @UI.fieldGroup: [ { qualifier: 'GR4', position: 200} ]
+  Ct501;
+  
+  @EndUserText.label: 'Tổng tiền lỗi bị trừ sau khi duyệt tỷ lệ'
+  @UI.lineItem: [ {
+    position: 542 , 
+    label: 'Tổng tiền lỗi bị trừ sau khi duyệt tỷ lệ'
+  } ]
+  @UI.selectionField: [ {
+    position: 542 
+  } ]
+    @UI.fieldGroup: [ { qualifier: 'GR5', position: 10} ]
+  Ct52;
+  
+  @EndUserText.label: 'Tổng tiền bị trừ'
+
+  @UI.lineItem: [ {
+    position: 545 , 
+    label: 'Tổng tiền bị trừ'
+  } ]
+  @UI.selectionField: [ {
+    position: 545 
+  } ]
+  @UI.fieldGroup: [ { qualifier: 'GR5', position: 20} ]
+  Ct53;
+  
+    @EndUserText.label: 'SD-Tổng tiền trước hỗ trợ'
+ @UI.fieldGroup: [ { qualifier: 'GR5', position: 30} ]
+  @UI.lineItem: [ {
+    position: 547 , 
+    label: 'SD-Tổng tiền trước hỗ trợ'
+  } ]
+  @UI.selectionField: [ {
+    position: 547 
+  } ]
+  ct531;
+  
+  @EndUserText.label: 'Hỗ trợ'
+ @UI.fieldGroup: [ { qualifier: 'GR5', position: 40} ]
+  @UI.lineItem: [ {
+    position: 546 , 
+    label: 'Hỗ trợ'
+  } ]
+  @UI.selectionField: [ {
+    position: 546 
+  } ]
+  ct40b;
+  
+    @EndUserText.label: 'SD-Tổng tiền được nhận'
+ @UI.fieldGroup: [ { qualifier: 'GR5', position: 50} ]
+  @UI.lineItem: [ {
+    position: 547 , 
+    label: 'SD-Tổng tiền được nhận'
+  } ]
+  @UI.selectionField: [ {
+    position: 547 
+  } ]
+  Ct51;
+  
+  
+  @EndUserText.label: 'Ghi chú - Tình trạng các nhà trong tháng phát sinh'
+ @UI.fieldGroup: [ { qualifier: 'GR5', position: 60} ]
+  @UI.lineItem: [ {
+    position: 580 , 
+    label: 'Ghi chú - Tình trạng các nhà trong tháng phát sinh'
+  } ]
+  @UI.selectionField: [ {
+    position: 580 
+  } ]
+  Ghichu;
+  
+//  @EndUserText.label: ' Tổng số lượng Xuất BTP trong tháng '
+// @UI.fieldGroup: [ { qualifier: 'GR5', position: 70} ]
+//  @UI.lineItem: [ {
+//    position: 590 , 
+//    label: ' Tổng số lượng Xuất BTP trong tháng '
+//  } ]
+//  @UI.selectionField: [ {
+//    position: 590 
+//  } ]
+//  Ct55;
+  
+}

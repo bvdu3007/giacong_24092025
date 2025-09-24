@@ -1,0 +1,58 @@
+managed implementation in class ZBP_R_TBTRU_BS_DTL unique;
+strict ( 2 );
+with draft;
+extensible;
+define behavior for ZR_TBTRU_BS_DTL alias ZrTbtruBsDtl
+persistent table ZTB_TRU_BS_DTL
+extensible
+draft table ZTBTRU_BS_DTL_D
+etag master LastChangedAt
+lock master total etag LastChangedAt
+authorization master( global )
+{
+  field ( readonly )
+   HdrID,
+   DtlID,
+   CreatedBy,
+   CreatedAt,
+   LastChangedBy,
+   LastChangedAt;
+
+  field ( numbering : managed )
+   HdrID,
+   DtlID;
+
+
+  create;
+  update;
+  delete;
+
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Edit;
+  draft action Resume;
+  draft determine action Prepare;
+
+  mapping for ZTB_TRU_BS_DTL corresponding extensible
+  {
+    HdrID = hdr_id;
+    DtlID = dtl_id;
+    Supplier = supplier;
+    Material = material;
+    Charcvalue = charcvalue;
+    Thieu = thieu;
+    Thua = thua;
+    Nhap = nhap;
+    Duocphep = duocphep;
+    Slduocphep = slduocphep;
+    Sltru = sltru;
+    Dongiatru = dongiatru;
+    Tongtientru = tongtientru;
+    Materialbaseunit = materialbaseunit;
+    CreatedBy = created_by;
+    CreatedAt = created_at;
+    LastChangedBy = last_changed_by;
+    LastChangedAt = last_changed_at;
+  }
+
+}

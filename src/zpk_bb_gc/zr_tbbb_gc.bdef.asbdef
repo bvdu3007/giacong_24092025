@@ -1,0 +1,222 @@
+managed implementation in class ZBP_R_TBBB_GC unique;
+strict ( 2 );
+with draft;
+//extensible;
+define behavior for ZR_TBBB_GC alias ZrTbbbGc
+//persistent table ztb_bb_gc
+//extensible
+draft table ztbbb_gc_d
+etag master LastChangedAt
+lock master total etag LastChangedAt
+authorization master ( global )
+with unmanaged save
+{
+  field ( readonly )
+  SoBb,
+  //  SoBbBase,
+  SupplierName1,
+  SoBbNum,
+  SoBbSub,
+  trangthai,
+  HdrID,
+  CreatedBy,
+  CreatedAt,
+  LastChangedBy,
+  LastChangedAt,
+  CompanyCode,
+  Supplier,
+  SupplierName,
+  OrderID,
+  SalesOrder,
+  Material,
+  ProductDescription,
+  ProdUnivHierarchyNode,
+  Ct14,
+  Ct18,
+  Ct19,
+  Ct20,
+  Ct21,
+  Ct22,
+  Ct24,
+  Ct25,
+  Ct26,
+  Ct27,
+  Ct28,
+  Ct29,
+  Ct30,
+  Ct31,
+  Ct32,
+  Ct40,
+  Ct47,
+  Ct48;
+
+  field ( readonly : update )
+  SoPo, LoaiHang, NgayNhapHang;
+
+field ( features : instance )
+      Ct12,
+      Ct13;
+
+
+  field ( mandatory : create )
+  SoPo, LoaiHang, NgayLapBb, NgayNhapHang;
+
+  field ( mandatory )
+  Ct12, Ct13;
+
+
+  field ( numbering : managed )
+  HdrID;
+
+
+  create;
+  update ( features : instance );
+  delete ( features : instance );
+
+  action ( features : instance ) btnPrintPDF result [1] ZC_BBGC_1;
+
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Edit;
+  draft action Resume;
+  //draft determine action Prepare;
+
+  mapping for ztb_bb_gc corresponding
+    {
+      HdrID         = hdr_id;
+      LoaiHang      = loai_hang;
+      SoBb          = so_bb;
+      SoBbBase      = so_bb_base;
+      SoBbNum       = so_bb_num;
+      SoBbSub       = so_bb_sub;
+      NgayLapBb     = ngay_lap_bb;
+      SoPo          = so_po;
+      NgayNhapHang  = ngay_nhap_hang;
+      NgayTraBb     = ngay_tra_bb;
+      NgayNhapKho   = ngay_nhap_kho;
+      Ct12          = ct12;
+      Ct13          = ct13;
+      Ct14          = ct14;
+      Ct16          = ct16;
+      GhiChu        = ghi_chu;
+      Ct18          = ct18;
+      Ct19          = ct19;
+      Ct20          = ct20;
+      Ct21          = ct21;
+      Ct22          = ct22;
+      Ct23          = ct23;
+      Ct24          = ct24;
+      Ct25          = ct25;
+      Ct26          = ct26;
+      Ct27          = ct27;
+      Ct28          = ct28;
+      Ct29          = ct29;
+      Ct30          = ct30;
+      Ct31          = ct31;
+      Ct32          = ct32;
+      Ct321         = ct321;
+      Ct322         = ct322;
+      Ct323         = ct323;
+      Ct324         = ct324;
+      bs01          = bs01;
+      bs02          = bs02;
+      bs03          = bs03;
+      bs04          = bs04;
+      bs05          = bs05;
+      bs06          = bs06;
+      bs07          = bs07;
+      Ct33          = ct33;
+      Ct34          = ct34;
+      Ct35          = ct35;
+      Ct36          = ct36;
+      Ct37          = ct37;
+      Ct38          = ct38;
+      Ct39          = ct39;
+      Ct40          = ct40;
+      Ct41          = ct41;
+      Ct42          = ct42;
+      Ct43          = ct43;
+      Ct44          = ct44;
+      Ct45          = ct45;
+      Ct46          = ct46;
+      Ct47          = ct47;
+      Ct48          = ct48;
+      CreatedBy     = created_by;
+      CreatedAt     = created_at;
+      LastChangedBy = last_changed_by;
+      LastChangedAt = last_changed_at;
+    }
+
+  determination checkInputFields on modify { create; }
+
+  determination checkInputFields_u on modify { update; }
+
+  draft determine action Prepare { validation checkInputFields_Save; }
+
+  validation checkInputFields_Save on save { create; field SoPo, ct12, ct13; }
+
+  determination SetData_GC on save { create; }
+
+  action ( features : instance ) Copy result [1] $self;
+  //  determination Calculate_data on save { update; }
+
+  association _dtl { create ( features : instance ); with draft; }
+}
+
+define behavior for ZR_TBGC_LOI alias ZrTbgcLoi
+//persistent table ztb_gc_loi
+draft table ztbgc_loi_d
+lock dependent by _hdr
+authorization dependent by _hdr
+with unmanaged save
+{
+  field ( readonly )
+  HdrID,
+  DtlID,
+  LoaiHang,
+  LoaiLoi,
+  CreatedBy,
+  CreatedAt,
+  LastChangedBy,
+  LastChangedAt,
+  Bangi,
+  CheckBangi,
+  Bangii,
+  CheckBangii,
+  tile
+  ;
+
+  field ( numbering : managed )
+  DtlID;
+
+  field ( mandatory : create )
+  ErrorCode, Errordesc;
+  //
+  field ( readonly : update )
+  ErrorCode, Errordesc;
+  update ( features : instance );
+  delete ( features : instance );
+
+  mapping for ztb_gc_loi corresponding
+    {
+      HdrID         = hdr_id;
+      DtlID         = dtl_id;
+      LoaiHang      = loai_hang;
+      LoaiLoi       = loai_loi;
+      ErrorCode     = error_code;
+      Errordesc     = errordesc;
+      SlLoi         = sl_loi;
+      Bangi         = bangi;
+      CheckBangi    = check_bangi;
+      Bangii        = bangii;
+      CheckBangii   = check_bangii;
+      GhiChu        = ghi_chu;
+      CreatedBy     = created_by;
+      CreatedAt     = created_at;
+      LastChangedBy = last_changed_by;
+      LastChangedAt = last_changed_at;
+    }
+
+  association _hdr { with draft; }
+
+}

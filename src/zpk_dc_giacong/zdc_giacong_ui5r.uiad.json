@@ -1,0 +1,34 @@
+{
+  "formatVersion": "2",
+  "header": {
+    "description": "An SAP Fiori application.",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "appType": "ui5",
+    "catalogId": "SAP_TC_UI5_REPO_UIAD",
+    "targetMappingTitle": "Đối chiếu gia công"
+  },
+  "ui5AppDetails": {
+    "appId": "zdcgiacong"
+  },
+  "navigation": {
+    "targetMappingId": "UI5R_8C5E25192CD43A0E0A00B925FADCB5E3AFE78FFA_TM",
+    "semanticObject": "zdc_giacong",
+    "action": "manage",
+    "desktop": true,
+    "tablet": true,
+    "phone": true
+  },
+  "tiles": [
+    {
+      "id": "UI5R_8C5E25192CD43A0E0A00B925FADCB5E3AFE78FFA_AL",
+      "tileType": "static",
+      "isDefault": true,
+      "standard": {
+        "title": "Đối chiếu gia công"
+      }
+    }
+  ]
+}

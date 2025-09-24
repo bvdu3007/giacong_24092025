@@ -1,0 +1,34 @@
+{
+  "formatVersion": "2",
+  "header": {
+    "description": "An SAP Fiori application.",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "appType": "ui5",
+    "catalogId": "SAP_TC_UI5_REPO_UIAD",
+    "targetMappingTitle": "Tồn kho"
+  },
+  "ui5AppDetails": {
+    "appId": "ztonkho"
+  },
+  "navigation": {
+    "targetMappingId": "UI5R_9DEF0DFE0ECFCABBC3CA2AF9C2F7593A0C3E9457_TM",
+    "semanticObject": "ztonkho",
+    "action": "manage",
+    "desktop": true,
+    "tablet": true,
+    "phone": true
+  },
+  "tiles": [
+    {
+      "id": "UI5R_9DEF0DFE0ECFCABBC3CA2AF9C2F7593A0C3E9457_AL",
+      "tileType": "static",
+      "isDefault": true,
+      "standard": {
+        "title": "Tồn kho"
+      }
+    }
+  ]
+}

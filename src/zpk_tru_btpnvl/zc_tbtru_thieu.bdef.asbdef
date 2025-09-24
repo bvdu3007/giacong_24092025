@@ -1,0 +1,29 @@
+projection implementation in class ZBP_C_TBTRU_THIEU unique;
+strict ( 2 );
+extensible;
+use draft;
+use side effects;
+define behavior for ZC_TBTRU_THIEU alias ZcTbtruThieu
+extensible
+use etag
+{
+  use create;
+  use update;
+  use delete;
+
+  use action Edit;
+  use action Activate;
+  use action Discard;
+  use action Resume;
+  use action Prepare;
+  use action UpdateData;
+use association _dtl { with draft; }
+}
+
+define behavior for  ZC_TBTRU_THIE_DTL alias  ZcTbtruThieDtl //alias <alias_name>
+{
+  use update;
+  //use delete;
+
+  use association _hdr { with draft; }
+}

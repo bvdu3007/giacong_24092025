@@ -1,0 +1,8 @@
+projection;
+strict ( 2 );
+
+define behavior for zc_nxt //alias <alias_name>
+{
+
+  use action CreateXNT;
+}

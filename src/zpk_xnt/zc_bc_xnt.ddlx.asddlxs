@@ -1,0 +1,105 @@
+@Metadata.layer: #CORE
+annotate entity ZC_BC_XNT with
+{
+//  @EndUserText.label: 'Từ ngày'
+//  @UI: {
+//  selectionField: [{ position: 10 }]
+//  }
+//  @Consumption.filter.mandatory: true
+//  @Consumption.filter.selectionType: #SINGLE
+//  DateFR;
+
+  @EndUserText.label: 'Kỳ'
+  @UI: {
+    selectionField: [{ position: 12 }]
+   }
+  @Consumption.filter.mandatory: true
+    @Consumption.filter.selectionType: #SINGLE
+  zper;
+
+  @UI: {
+  selectionField: [{ position: 15 }]
+  }
+  @UI.lineItem: [{ position: 15 , label: 'Mã hàng'}]
+  material;
+
+  @UI.lineItem: [{ position: 30 , label: 'Tên hàng'}]
+  ProductDescription;
+
+  @UI: {
+  selectionField: [{ position: 40 }]
+  }
+  @UI.lineItem: [{ position: 40 , label: 'Plant'}]
+  plant;
+
+  @UI: {
+  selectionField: [{ position: 50 }]
+  }
+  @UI.lineItem: [{ position: 50 , label: 'Mã nhà gia công'}]
+  supplier;
+
+
+  @UI.lineItem: [{ position: 60 , label: 'Tên nhà gia công'}]
+  SupplierName;
+
+  @UI: {
+  selectionField: [{ position: 70 }]
+  }
+  @UI.lineItem: [{ position: 70 , label: 'Mã lệnh gia công'}]
+  orderid;
+
+
+  @UI.lineItem: [{ position: 80 , label: 'Tồn đầu'}]
+  DauKy;
+
+
+  @UI.lineItem: [{ position: 90 , label: 'Xuất trong kỳ'}]
+  XuatTKy;
+
+  @UI.lineItem: [{ position: 100 , label: 'Nhập trong kỳ'}]
+  NhapTKy;
+    
+  @UI.lineItem: [{ position: 105 , label: 'SL BTP/NVL đã nhập về (theo BTP nhận về sau may)'}]
+  SLBTPNVLDaNhapVe;
+  
+  @UI.lineItem: [{ position: 110 , label: 'Nhập trả BTP đạt'}]
+  NhapTraBTPDat;
+
+
+  @UI.lineItem: [{ position: 111 , label: 'Tổng nhập trả BTP lỗi (do cty & nhà GC)'}]
+  BTPLoi;
+
+
+  @UI.lineItem: [{ position: 112 , label: 'Nhập trả BTP lỗi do công ty'}]
+  NhapTraBTPLoiCTy;
+
+
+  @UI.lineItem: [{ position: 113 , label: 'Nhập trả BTP lỗi do gia công'}]
+  NhapTraBTPLoiGC;
+
+
+  @UI.lineItem: [{ position: 114 , label: 'Nhập trừ BTP thiếu'}]
+  NhapTruBTPThieu;
+
+  @UI.lineItem: [{ position: 115 , label: 'Tồn cuối'}]
+  TonCuoi;
+
+  @UI.lineItem: [{ position: 116 , label: 'UoM'}]
+  materialbaseunit;
+
+  @UI.lineItem: [{ position: 117 , label: 'Đơn hàng vét'}]
+  DonHangVet;
+
+
+  @UI.lineItem: [{ position: 118 , label: 'Mã đơn hàng'}]
+  SalesOrder;
+
+
+  @UI.lineItem: [{ position: 119 , label: 'Mã BTP sau may'}]
+  BTPSauMay;
+
+  @UI.lineItem: [{ position: 120 , label: 'Tên BTP sau may'}]
+  TenBTPSauMay;
+
+
+}

@@ -1,0 +1,17 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "Space for gia công",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "title": "Gia công",
+    "sortPriority": 100.0
+  },
+  "pages": [
+    {
+      "name": "ZLP_GIACONG"
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "formatVersion": "2",
+  "header": {
+    "description": "An SAP Fiori application.",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "appType": "ui5",
+    "catalogId": "SAP_TC_UI5_REPO_UIAD",
+    "targetMappingTitle": "Bảng xét duyệt tỷ lệ"
+  },
+  "ui5AppDetails": {
+    "appId": "zxetduyet"
+  },
+  "navigation": {
+    "targetMappingId": "UI5R_6620E7FA7ACD33453414BED1659C34B8C4F1884A_TM",
+    "semanticObject": "zxetduyet",
+    "action": "manage",
+    "desktop": true,
+    "tablet": true,
+    "phone": true
+  },
+  "tiles": [
+    {
+      "id": "UI5R_6620E7FA7ACD33453414BED1659C34B8C4F1884A_AL",
+      "tileType": "static",
+      "isDefault": true,
+      "standard": {
+        "title": "Bảng xét duyệt tỷ lệ"
+      }
+    }
+  ]
+}

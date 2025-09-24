@@ -1,0 +1,11 @@
+@EndUserText: {
+  label: 'Service Definition for ZC_TBTRU_THIE_DTL'
+}
+@ObjectModel: {
+  leadingEntity: {
+    name: 'ZC_TBTRU_THIE_DTL'
+  }
+}
+define service ZUI_TBTRU_THIE_DTL_O4 provider contracts odata_v4_ui {
+  expose ZC_TBTRU_THIE_DTL;
+}

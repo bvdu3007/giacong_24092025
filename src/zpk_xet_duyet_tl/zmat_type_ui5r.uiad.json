@@ -1,0 +1,34 @@
+{
+  "formatVersion": "2",
+  "header": {
+    "description": "An SAP Fiori application.",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "appType": "ui5",
+    "catalogId": "SAP_TC_UI5_REPO_UIAD",
+    "targetMappingTitle": "Loại NVL"
+  },
+  "ui5AppDetails": {
+    "appId": "zmattype"
+  },
+  "navigation": {
+    "targetMappingId": "UI5R_631F574D772BF96C19A5DC1D999FCDF574E1E652_TM",
+    "semanticObject": "zmat_type",
+    "action": "manage",
+    "desktop": true,
+    "tablet": true,
+    "phone": true
+  },
+  "tiles": [
+    {
+      "id": "UI5R_631F574D772BF96C19A5DC1D999FCDF574E1E652_AL",
+      "tileType": "static",
+      "isDefault": true,
+      "standard": {
+        "title": "Loại NVL"
+      }
+    }
+  ]
+}

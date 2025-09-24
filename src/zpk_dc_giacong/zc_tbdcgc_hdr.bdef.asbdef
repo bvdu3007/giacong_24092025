@@ -1,0 +1,32 @@
+projection implementation in class ZBP_C_TBDCGC_HDR unique;
+strict ( 2 );
+extensible;
+use draft;
+use side effects;
+define behavior for ZC_TBDCGC_HDR alias ZcTbdcgcHdr
+extensible
+use etag
+{
+  use create;
+  use update;
+  use delete;
+
+  use action Edit;
+  use action Activate;
+  use action Discard;
+  use action Resume;
+  use action Prepare;
+use association _dtl { with draft; }
+use action UpdateData;
+use action CreateByPer;
+use action PheDuyet;
+use action HuyPheDuyet;
+}
+
+define behavior for ZC_TBDCGC_DTL alias ZcTbdcgcDtl
+{
+  use update;
+//  use delete;
+
+  use association _hdr { with draft; }
+}

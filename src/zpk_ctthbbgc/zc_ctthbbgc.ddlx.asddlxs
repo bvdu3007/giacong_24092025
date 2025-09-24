@@ -1,0 +1,476 @@
+@Metadata.layer: #PARTNER
+@UI: {
+  headerInfo: {
+    typeName: 'Báo cáo chi tiết lỗi gia công',
+    typeNamePlural: 'Báo cáo chi tiết lỗi gia công',
+    title: {
+      type: #STANDARD,
+      label: 'Số Biên Bản',
+      value: 'report_no'
+    },
+    description: {
+      type: #STANDARD,
+      label: 'Số TT',
+      value: 'line_num'
+    }
+  },
+  presentationVariant: [{
+    sortOrder: [{
+      by: 'line_num',
+      direction: #ASC
+    }]
+  }]
+}
+annotate entity ZC_CTTHBBGC with
+{
+
+  @UI.facet: [
+  { label: 'Thông Tin Chung',
+    id: 'GI',
+    purpose: #STANDARD,
+    position: 10 ,
+    type: #FIELDGROUP_REFERENCE,
+    targetQualifier: 'GI'
+  },
+
+  { label: 'Chi Tiết Lỗi',
+    id: 'CTL',
+    purpose: #STANDARD,
+    position: 20,
+    type: #FIELDGROUP_REFERENCE,
+    targetQualifier: 'CTL'
+  },
+
+  { label: 'Lỗi Gia Công Khác',
+    id: 'LDIF',
+    purpose: #STANDARD,
+    position: 30,
+    type: #FIELDGROUP_REFERENCE,
+    targetQualifier: 'LDIF'
+  },
+
+  { label: 'Tổng',
+    id: 'SUM',
+    purpose: #STANDARD,
+    position: 40,
+    type: #FIELDGROUP_REFERENCE,
+    targetQualifier: 'SUM'
+  },
+
+  { label: 'Ghi Chú',
+    id: 'GC',
+    purpose: #STANDARD,
+    position: 50,
+    type: #FIELDGROUP_REFERENCE,
+    targetQualifier: 'GC'
+  }]
+
+//  @UI.hidden: true
+  @EndUserText.label: 'Số UUID'
+  hdr_id;
+
+  @UI: {
+  lineItem: [{ position: 10 }] }
+  @EndUserText.label: 'Số TT'
+  line_num;
+
+  @UI: {
+  lineItem: [{ position: 20 }],
+  fieldGroup: [{ qualifier: 'GI', position: 20}],
+  selectionField: [{ position: 10 }]}
+  @EndUserText.label: 'LSX gia công'
+  @Consumption.valueHelpDefinition: [{ entity: { name: 'zr_tbbb_gc', element: 'OrderID' } }]
+  @Search.defaultSearchElement: true
+  lsx_gc;
+
+  @UI: {
+  lineItem: [{ position: 30 }],
+  fieldGroup: [{ qualifier: 'GI', position: 30}],
+  selectionField: [{ position: 20 }]}
+  @EndUserText.label: 'PO gia công'
+  @Consumption.valueHelpDefinition: [{ entity: { name: 'zr_tbbb_gc', element: 'SoPo' } }]
+  @Search.defaultSearchElement: true
+  po_Subcontracting;
+
+  @UI: {
+  lineItem: [{ position: 35 }],
+  fieldGroup: [{ qualifier: 'GI', position: 35}] }
+  @EndUserText.label: 'Company Code'
+  @Consumption.valueHelpDefinition: [{ entity: { name: 'zr_tbbb_gc', element: 'companycode' } }]
+  @Search.defaultSearchElement: true
+  company_code;
+
+  @UI: {
+  lineItem: [{ position: 40 }],
+  fieldGroup: [{ qualifier: 'GI', position: 50}],
+  selectionField: [{ position: 30 }]}
+  @EndUserText.label: 'Số SO'
+  @Consumption.valueHelpDefinition: [{ entity: { name: 'zr_tbbb_gc', element: 'SalesOrder' } }]
+  @Search.defaultSearchElement: true
+  so_number;
+
+  @UI: {
+  lineItem: [{ position: 50 }],
+  fieldGroup: [{ qualifier: 'GI', position: 60}] }
+  @EndUserText.label: 'Kiểu hàng'
+  item_type;
+
+  @UI: {
+  lineItem: [{ position: 60 }],
+  fieldGroup: [{ qualifier: 'GI', position: 70}],
+  selectionField: [{ position: 40 }]}
+  @EndUserText.label: 'Mã hàng hóa'
+  @Consumption.valueHelpDefinition: [{ entity: { name: 'zr_tbbb_gc', element: 'Material' } }]
+  @Search.defaultSearchElement: true
+  item_id;
+
+  @UI: {
+  lineItem: [{ position: 70 }],
+  fieldGroup: [{ qualifier: 'GI', position: 80}] }
+  @EndUserText.label: 'Mô tả mã hàng'
+  item_desc;
+
+  @UI: {
+  lineItem: [{ position: 80 }],
+  fieldGroup: [{ qualifier: 'GI', position: 90}],
+  selectionField: [{ position: 50 }]}
+  @EndUserText.label: 'Mã nhà GC'
+  @Consumption.valueHelpDefinition: [{ entity: { name: 'zr_tbbb_gc', element: 'Supplier' } }]
+  @Search.defaultSearchElement: true
+  gc_id;
+
+  @UI: {
+  lineItem: [{ position: 90 }],
+  fieldGroup: [{ qualifier: 'GI', position: 100}],
+  selectionField: [{ position: 60 }]}
+  @EndUserText.label: 'Tên nhà GC'
+  @Consumption.valueHelpDefinition: [{ entity: { name: 'zr_tbbb_gc', element: 'SupplierName' } }]
+  @Search.defaultSearchElement: true
+  gc_name;
+
+  @UI: {
+  lineItem: [{ position: 100 }],
+  fieldGroup: [{ qualifier: 'GI', position: 110}],
+  selectionField: [{ position: 90 }]}
+  @EndUserText.label: 'Số biên bản'
+  @Consumption.valueHelpDefinition: [{ entity: { name: 'zr_tbbb_gc', element: 'SoBb' } }]
+  @Search.defaultSearchElement: true
+  report_no;
+
+  @UI: {
+  lineItem: [{ position: 110 }],
+  fieldGroup: [{ qualifier: 'GI', position: 120}],
+  selectionField: [{ position: 70 }]}
+  @EndUserText.label: 'Ngày nhập hàng'
+  @Consumption.valueHelpDefinition: [{ entity: { name: 'zr_tbbb_gc', element: 'NgayNhapHang' } }]
+  @Search.defaultSearchElement: true
+  import_date;
+
+  @UI: {
+  lineItem: [{ position: 120 }],
+  fieldGroup: [{ qualifier: 'GI', position: 130}],
+  selectionField: [{ position: 80 }]}
+  @EndUserText.label: 'Ngày nhập kho'
+  @Consumption.valueHelpDefinition: [{ entity: { name: 'zr_tbbb_gc', element: 'NgayNhapKho' } }]
+  @Search.defaultSearchElement: true
+  entry_date;
+
+  @UI: {
+  lineItem: [{ position: 130 }],
+  fieldGroup: [{ qualifier: 'GI', position: 140}] }
+  @EndUserText.label: 'SL nhập theo chứng từ'
+  amount_on_paper;
+
+  @UI: {
+  lineItem: [{ position: 140 }],
+  fieldGroup: [{ qualifier: 'GI', position: 150}] }
+  @EndUserText.label: 'Số lượng kiểm'
+  amount_check;
+
+  @UI: {
+  lineItem: [{ position: 150 }],
+  fieldGroup: [{ qualifier: 'CTL', position: 10}] }
+  @EndUserText.label: 'Lỗi côn trùng'
+  insect;
+
+  @UI: {
+  lineItem: [{ position: 160 }],
+  fieldGroup: [{ qualifier: 'CTL', position: 20}] }
+  @EndUserText.label: 'Bẩn'
+  dirty;
+
+  @UI: {
+  lineItem: [{ position: 170 }],
+  fieldGroup: [{ qualifier: 'CTL', position: 30}] }
+  @EndUserText.label: 'Không may quai'
+  no_strap;
+
+  @UI: {
+  lineItem: [{ position: 180 }],
+  fieldGroup: [{ qualifier: 'CTL', position: 40}] }
+  @EndUserText.label: 'Sụt đáy/viền'
+  bottom_edge_defect;
+
+  @UI: {
+  lineItem: [{ position: 190 }],
+  fieldGroup: [{ qualifier: 'CTL', position: 50}] }
+  @EndUserText.label: 'Lỗi quai (làm tụt quai khi thử tải 30kg)'
+  strap_defect;
+
+  @UI: {
+  lineItem: [{ position: 200 }],
+  fieldGroup: [{ qualifier: 'CTL', position: 60}] }
+  @EndUserText.label: 'May vỡ mặt manh'
+  seam_failure;
+
+  @UI: {
+  lineItem: [{ position: 210 }],
+  fieldGroup: [{ qualifier: 'CTL', position: 70}] }
+  @EndUserText.label: 'Máy cào xước màng, rách manh, rách góc'
+  fabric_defects;
+
+  @UI: {
+  lineItem: [{ position: 220 }],
+  fieldGroup: [{ qualifier: 'CTL', position: 80}] }
+  @EndUserText.label: 'Bẩn nhẹ'
+  light_stain;
+
+  @UI: {
+  lineItem: [{ position: 230 }],
+  fieldGroup: [{ qualifier: 'CTL', position: 90}] }
+  @EndUserText.label: 'Gấp miệng sai 4mm'
+  hem_fold_miss_4mm;
+
+  @UI: {
+  lineItem: [{ position: 240 }],
+  fieldGroup: [{ qualifier: 'CTL', position: 100}] }
+  @EndUserText.label: 'Chắp đáy sai 4mm'
+  bottom_seam_miss_4mm;
+
+  @UI: {
+  lineItem: [{ position: 250 }],
+  fieldGroup: [{ qualifier: 'CTL', position: 110}] }
+  @EndUserText.label: 'Lỗi đáy/viền không đạt'
+  bottom_edge_not_meet_requi;
+
+  @UI: {
+  lineItem: [{ position: 260 }],
+  fieldGroup: [{ qualifier: 'CTL', position: 120}] }
+  @EndUserText.label: 'Lỗi may lệch tâm đáy'
+  bottom_miss_center;
+
+  @UI: {
+  lineItem: [{ position: 270 }],
+  fieldGroup: [{ qualifier: 'CTL', position: 130}] }
+  @EndUserText.label: 'May trượt mí quai'
+  strap_off_seam;
+
+  @UI: {
+  lineItem: [{ position: 280 }],
+  fieldGroup: [{ qualifier: 'CTL', position: 140}] }
+  @EndUserText.label: 'Lệch quai, vặn quai'
+  strap_defects;
+
+  @UI: {
+  lineItem: [{ position: 290 }],
+  fieldGroup: [{ qualifier: 'CTL', position: 150}] }
+  @EndUserText.label: 'May quai không bằng đầu 10mm'
+  strap_unenven_10mm;
+
+  @UI: {
+  lineItem: [{ position: 300 }],
+  fieldGroup: [{ qualifier: 'CTL', position: 160}] }
+  @EndUserText.label: 'May quai sai thông số'
+  strap_out_of_spec;
+
+  @UI: {
+  lineItem: [{ position: 310 }],
+  fieldGroup: [{ qualifier: 'CTL', position: 170}] }
+  @EndUserText.label: 'Đứt chỉ quai'
+  strap_thread_break;
+
+  @UI: {
+  lineItem: [{ position: 320 }],
+  fieldGroup: [{ qualifier: 'CTL', position: 180}] }
+  @EndUserText.label: 'Hàng cắt chỉ không đạt'
+  improper_trimming;
+
+  @UI: {
+  lineItem: [{ position: 330 }],
+  fieldGroup: [{ qualifier: 'CTL', position: 190}] }
+  @EndUserText.label: 'Gấp lệch 1-1.5cm'
+  fold_misalign_un_1_5cm;
+
+  @UI: {
+  lineItem: [{ position: 340 }],
+  fieldGroup: [{ qualifier: 'CTL', position: 200}] }
+  @EndUserText.label: 'Gấp lệch >1.5cm'
+  fold_misalign_ov_1_5cm;
+
+  @UI: {
+  lineItem: [{ position: 350 }],
+  fieldGroup: [{ qualifier: 'CTL', position: 210}] }
+  @EndUserText.label: 'Nhăn nhàu'
+  wrinkled;
+
+  @UI: {
+  lineItem: [{ position: 360 }],
+  fieldGroup: [{ qualifier: 'CTL', position: 220}] }
+  @EndUserText.label: 'Sùi chỉ miệng, đứt chỉ miệng'
+  defect_stitch_opening;
+
+  @UI: {
+  lineItem: [{ position: 370 }],
+  fieldGroup: [{ qualifier: 'CTL', position: 230}] }
+  @EndUserText.label: 'May sai bước chỉ > 1mm'
+  incorrect_stitch_pitch_1mm;
+
+  @UI: {
+  lineItem: [{ position: 380 }],
+  fieldGroup: [{ qualifier: 'CTL', position: 240}] }
+  @EndUserText.label: 'Lệch thân và hông > 4mm'
+  body_side_misalign_4mm;
+
+  @UI: {
+  lineItem: [{ position: 390 }],
+  fieldGroup: [{ qualifier: 'CTL', position: 250}] }
+  @EndUserText.label: 'Viền vặn thân'
+  twisted_body_binding;
+
+  @UI: {
+  lineItem: [{ position: 400 }],
+  fieldGroup: [{ qualifier: 'CTL', position: 260}] }
+  @EndUserText.label: 'Thiếu tem, sai tem, thẻ bài'
+  incorrect_label;
+
+  @UI: {
+  lineItem: [{ position: 410 }],
+  fieldGroup: [{ qualifier: 'CTL', position: 270}] }
+  @EndUserText.label: 'Thiếu số lượng trong bó'
+  short_quan_bundle;
+
+  @UI: {
+  lineItem: [{ position: 420 }],
+  fieldGroup: [{ qualifier: 'CTL', position: 280}] }
+  @EndUserText.label: 'Thừa số lượng trong bó'
+  excess_quan_bundle;
+
+  @UI: {
+  lineItem: [{ position: 430 }],
+  fieldGroup: [{ qualifier: 'CTL', position: 290}] }
+  @EndUserText.label: 'Bật viền, bật đầu khóa'
+  zipper_defect;
+
+  @UI: {
+  lineItem: [{ position: 440 }],
+  fieldGroup: [{ qualifier: 'CTL', position: 300}] }
+  @EndUserText.label: 'Khóa hỏng'
+  broken_zipper;
+
+  @Consumption.filter.hidden: true
+  @UI: {
+  //    lineItem: [{ position: 450 }],
+  //    fieldGroup: [{ qualifier: 'LDIF', position: 10}] }
+  lineItem: [{ hidden: true }] }
+  @EndUserText.label: 'Số lượng hàng nhập không tem may'
+  ko_tem_may;
+
+  @Consumption.filter.hidden: true
+  @UI: {
+  //    lineItem: [{ position: 460 }],
+  //    fieldGroup: [{ qualifier: 'LDIF', position: 20}] }
+  lineItem: [{ hidden: true }] }
+  @EndUserText.label: 'Số lượng hàng nhập không tem dán'
+  ko_tem_dan;
+
+  @Consumption.filter.hidden: true
+  @UI: {
+  //    lineItem: [{ position: 470 }],
+  //    fieldGroup: [{ qualifier: 'LDIF', position: 30}] }
+  lineItem: [{ hidden: true }] }
+  @EndUserText.label: 'Số lượng hàng nhập không tem treo'
+  ko_tem_treo;
+
+  @Consumption.filter.hidden: true
+  @UI: {
+  //    lineItem: [{ position: 480 }],
+  //    fieldGroup: [{ qualifier: 'LDIF', position: 40}] }
+  lineItem: [{ hidden: true }] }
+  @EndUserText.label: 'Số lượng hàng nhập không tem bắn'
+  ko_tem_ban;
+
+  @Consumption.filter.hidden: true
+  @UI: {
+  //    lineItem: [{ position: 490 }],
+  //    fieldGroup: [{ qualifier: 'LDIF', position: 50}] }
+  lineItem: [{ hidden: true }] }
+  @EndUserText.label: 'Số lượng hàng nhập thiếu tấm bìa'
+  thieu_tam_bia;
+
+  @UI: {
+  lineItem: [{ position: 500 }],
+  fieldGroup: [{ qualifier: 'LDIF', position: 60}] }
+  @EndUserText.label: 'Biên bảng hiện trường: côn trùng, dị vật:'
+  contrung_divat;
+
+  @UI: {
+  lineItem: [{ position: 510 }],
+  fieldGroup: [{ qualifier: 'LDIF', position: 70}] }
+  @EndUserText.label: 'Biên bản hiện trường: chỉ nhúng dầu!:'
+  chi_nhung_dau;
+
+  @UI: {
+  lineItem: [{ position: 520 }],
+  fieldGroup: [{ qualifier: 'CTL', position: 310}] }
+  @EndUserText.label: 'Lỗi kém CL'
+  low_quality;
+
+  @UI: {
+  lineItem: [{ position: 530 }],
+  fieldGroup: [{ qualifier: 'CTL', position: 320}] }
+  @EndUserText.label: 'Không đạt bảng I'
+  not_met_table_1;
+
+  @UI: {
+  lineItem: [{ position: 540 }],
+  fieldGroup: [{ qualifier: 'CTL', position: 330}] }
+  @EndUserText.label: 'Không đạt bảng II (Lỗi nghiêm trọng)'
+  not_met_table_2_mid;
+
+  @UI: {
+  lineItem: [{ position: 550 }],
+  fieldGroup: [{ qualifier: 'CTL', position: 340}] }
+  @EndUserText.label: 'Không đạt bảng II (ĐBNT)'
+  not_met_table_2_high;
+
+  @UI: {
+  lineItem: [{ position: 560 }],
+  fieldGroup: [{ qualifier: 'SUM', position: 10}] }
+  @EndUserText.label: 'Tổng số lượng hàng ko đạt bảng II'
+  not_met_table_2_total;
+
+  @UI: {
+  lineItem: [{ position: 570 }],
+  fieldGroup: [{ qualifier: 'SUM', position: 20}] }
+  @EndUserText.label: 'Tổng số lượng hàng kém chất lượng > 10%'
+  defect_rate_exceeds_10;
+
+  @UI: {
+  lineItem: [{ position: 580 }],
+  fieldGroup: [{ qualifier: 'SUM', position: 30}] }
+  @EndUserText.label: 'Tổng số lượng hàng đạt'
+  Total_quality_passed;
+
+  @UI: {
+  lineItem: [{ position: 590 }],
+  fieldGroup: [{ qualifier: 'SUM', position: 40}] }
+  @EndUserText.label: 'Tổng Cộng'
+  total;
+
+  @UI: {
+  lineItem: [{ position: 600 }],
+  fieldGroup: [{ qualifier: 'GC', position: 10}] }
+  @EndUserText.label: 'Ghi chú'
+  note;
+
+}

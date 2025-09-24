@@ -1,0 +1,13 @@
+@EndUserText: {
+  label: 'Service Definition for ZC_TB_MALOI_HANG'
+}
+@ObjectModel: {
+  leadingEntity: {
+    name: 'ZC_TB_MALOI_HANG'
+  }
+}
+define service ZUI_TB_MALOI_HANG_O4
+  provider contracts odata_v4_ui {
+  expose ZC_TB_MALOI_HANG;
+  expose ZC_TB_LOI_H_DTL;
+}

@@ -1,0 +1,16 @@
+unmanaged implementation in class zbp_i_nxt unique;
+strict ( 2 );
+
+define behavior for zi_nxt //alias <alias_name>
+//late numbering
+lock master
+authorization master ( instance )
+//etag master <field_name>
+{
+
+  field ( readonly ) Material, Plant, Supplier, Orderid, Zper;
+    create;
+  delete;
+
+  static action CreateXNT parameter zst_xnt_cr_fr_to;
+}

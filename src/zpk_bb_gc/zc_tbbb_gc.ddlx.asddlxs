@@ -1,0 +1,745 @@
+@Metadata.layer: #CORE
+@UI.headerInfo.title.type: #STANDARD
+@UI.headerInfo.title.value: 'SoBb'
+@UI.headerInfo.description.type: #STANDARD
+@UI.headerInfo.description.value: 'SoBb'
+
+@UI.presentationVariant: [ {
+  sortOrder: [{ by: 'SoBb', direction: #DESC }],
+  groupBy: [ 'LoaiHang' ],
+  visualizations: [{ type: #AS_LINEITEM }]
+} ]
+
+annotate view ZC_TBBB_GC with
+{
+
+
+
+  @UI.facet: [ {
+    label: 'General Information',
+    id: 'GeneralInfo',
+    purpose: #STANDARD,
+    position: 10 ,
+    type: #IDENTIFICATION_REFERENCE
+  } ,
+  {
+      id: 'PO',
+      purpose: #STANDARD,
+      position: 15,
+      label: 'Thông tin PO gia công',
+      type: #FIELDGROUP_REFERENCE,
+      targetQualifier: 'PO'
+    },
+    {
+      id: 'GR1',
+      purpose: #STANDARD,
+      position: 20,
+      label: 'Số lượng',
+      type: #FIELDGROUP_REFERENCE,
+      targetQualifier: 'GR1'
+    },
+    {
+      id: 'GR2',
+      purpose: #STANDARD,
+      position: 30,
+      label: 'Tổng SL&CL thực tế sau khi KCS KT',
+      type: #FIELDGROUP_REFERENCE,
+      targetQualifier: 'GR2'
+    },
+
+  {
+      id: 'GR3',
+      purpose: #STANDARD,
+      position: 40,
+      label: 'Tỷ lệ kiểm của KCS trên tổng số hàng',
+      type: #FIELDGROUP_REFERENCE,
+      targetQualifier: 'GR3'
+    },
+
+  {
+      id: 'GR4',
+      purpose: #STANDARD,
+      position: 50,
+      label: 'Hàng trả chậm/trả về',
+      type: #FIELDGROUP_REFERENCE,
+      targetQualifier: 'GR4'
+    },
+    {
+      id: 'GR8',
+      purpose: #STANDARD,
+      position: 55,
+      label: 'Lỗi gia công khác',
+      type: #FIELDGROUP_REFERENCE,
+      targetQualifier: 'GR8'
+    },
+
+  {
+      id: 'GR5',
+      purpose: #STANDARD,
+      position: 60,
+      label: 'Lỗi công ty',
+      type: #FIELDGROUP_REFERENCE,
+      targetQualifier: 'GR5'
+    },
+    {
+      id: 'GR6',
+      purpose: #STANDARD,
+      position: 70,
+      label: 'Lỗi gia công',
+      type: #FIELDGROUP_REFERENCE,
+      targetQualifier: 'GR6'
+    },
+        {
+      id: 'GR7',
+      purpose: #STANDARD,
+      position: 80,
+      label: 'Tổng lỗi',
+      type: #FIELDGROUP_REFERENCE,
+      targetQualifier: 'GR7'
+    },
+
+  {
+      id: 'Items',
+      purpose: #STANDARD,
+      position: 100,
+      label: 'Chi tiết lỗi',
+      type: #LINEITEM_REFERENCE,
+      targetElement: '_dtl'
+    }
+    ]
+
+
+
+  @UI.identification: [ {
+    position: 20
+  } ]
+  @UI.lineItem: [ {
+    position: 20
+  } ]
+  @UI.selectionField: [ {
+    position: 20
+  } ]
+
+  @Consumption.valueHelpDefinition:[
+      { entity                       : { name : 'ZJP_C_DOMAIN_FIX_VAL' , element: 'low' } ,
+      additionalBinding              : [{ element: 'domain_name',
+                localConstant        : 'ZDE_LOAI_HANG', usage: #FILTER }]
+                , distinctValues     : true
+      }]
+
+  LoaiHang;
+
+  @UI.identification: [ {
+    position: 30
+  } ]
+  @UI.lineItem: [ {
+    position: 30
+  } , { type: #FOR_ACTION, dataAction: 'Copy', label: 'Copy biên bản gia công' }]
+  @UI.selectionField: [ {
+    position: 30
+  } ]
+  SoBb;
+
+  @EndUserText.label: 'Ngày lập biên bản'
+  @UI.identification: [ {
+    position: 50 ,
+    label: 'Ngày lập biên bản'
+  } ]
+  @UI.lineItem: [ {
+    position: 50 ,
+    label: 'Ngày lập biên bản'
+  } ]
+  @UI.selectionField: [ {
+    position: 50
+  } ]
+  NgayLapBb;
+  
+  
+  @UI.identification: [ {
+    position: 55 
+  } ]
+  @UI.lineItem: [ {
+    position: 55 
+  } ]
+  @UI.selectionField: [ {
+    position: 55
+  } ]
+  trangthai;
+  
+  @EndUserText.label: 'PO gia công'
+  @UI.lineItem: [ {
+    position: 60
+  } ]
+  @UI.selectionField: [ {
+    position: 60
+  } ]
+  @UI.fieldGroup: [ { qualifier: 'PO', position: 10} ]
+  SoPo;
+  
+      @UI.selectionField: [ {
+    position: 65
+  } ]
+    @UI.lineItem: [ {
+  position: 61
+  } ]
+  @UI.fieldGroup: [ { qualifier: 'PO', position: 15} ]
+  CompanyCode;
+  
+  @EndUserText.label: 'Mã nhà gia công'
+
+  @UI.lineItem: [ {
+  position: 62
+  } ]
+    
+
+  @UI.fieldGroup: [ { qualifier: 'PO', position: 20} ]
+  Supplier;
+
+  @EndUserText.label: 'Nhà gia công'
+  @UI.lineItem: [ {
+  position: 63
+  } ]
+
+  @UI.fieldGroup: [ { qualifier: 'PO', position: 30} ]
+  SupplierName;
+
+  @EndUserText.label: 'Nhà gia công (tên ngắn)'
+  @UI.lineItem: [ {
+  position: 64
+  } ]
+
+  @UI.fieldGroup: [ { qualifier: 'PO', position: 30} ]
+  SupplierName1;
+
+  @EndUserText.label: 'LSX gia công'
+  @UI.lineItem: [ {
+  position: 65
+  } ]
+
+  @UI.fieldGroup: [ { qualifier: 'PO', position: 40} ]
+  OrderID;
+
+  @EndUserText.label: 'Số SO'
+  @UI.lineItem: [ {
+  position: 66
+  } ]
+
+  @UI.fieldGroup: [ { qualifier: 'PO', position: 50} ]
+  SalesOrder;
+
+  @EndUserText.label: 'Mã vật tư'
+  @UI.lineItem: [ {
+  position: 67
+  } ]
+
+  @UI.fieldGroup: [ { qualifier: 'PO', position: 60} ]
+  Material;
+
+  @UI.lineItem: [ {
+  position: 68
+  } ]
+
+  @EndUserText.label: 'Tên vật tư'
+  @UI.fieldGroup: [ { qualifier: 'PO', position: 70} ]
+  ProductDescription;
+
+  @UI.lineItem: [ {
+  position: 68
+  } ]
+
+  @EndUserText.label: 'Loại túi'
+  @UI.fieldGroup: [ { qualifier: 'PO', position: 80} ]
+  ProdUnivHierarchyNode;
+
+  @EndUserText.label: 'Ngày nhập hàng'
+  @UI.identification: [ {
+    position: 70 ,
+    label: 'Ngày nhập hàng'
+  } ]
+  @UI.lineItem: [ {
+    position: 70 ,
+    label: 'Ngày nhập hàng'
+  } ]
+  @UI.selectionField: [ {
+    position: 70
+  } ]
+  NgayNhapHang;
+
+  @EndUserText.label: 'Ngày trả biên bản'
+  @UI.identification: [ {
+    position: 80 ,
+    label: 'Ngày trả biên bản'
+  } ]
+  @UI.lineItem: [ {
+    position: 80 ,
+    label: 'Ngày trả biên bản'
+  } ]
+  @UI.selectionField: [ {
+    position: 80
+  } ]
+  NgayTraBb;
+
+  @EndUserText.label: 'Ngày nhập kho'
+  @UI.identification: [ {
+    position: 90 ,
+    label: 'Ngày nhập kho'
+  } ]
+  @UI.lineItem: [ {
+    position: 90 ,
+    label: 'Ngày nhập kho'
+  } ]
+  @UI.selectionField: [ {
+    position: 90
+  } ]
+  NgayNhapKho;
+
+  @EndUserText.label: 'Tổng cái'
+
+  @UI.lineItem: [ {
+    position: 100 ,
+    label: 'Tổng cái'
+  } ]
+
+  @UI.fieldGroup: [ { qualifier: 'GR1', position: 10} ]
+
+  Ct12;
+
+  @EndUserText.label: 'Số lượng kiểm'
+
+  @UI.lineItem: [ {
+    position: 110 ,
+    label: 'Số lượng kiểm'
+  } ]
+
+  @UI.fieldGroup: [ { qualifier: 'GR1', position: 20} ]
+
+  Ct13;
+
+  @EndUserText.label: 'Tỷ lệ kiểm'
+
+  @UI.lineItem: [ {
+    position: 120 ,
+    label: 'Tỷ lệ kiểm'
+  } ]
+
+  @UI.fieldGroup: [ { qualifier: 'GR1', position: 30} ]
+  Ct14;
+
+  @EndUserText.label: 'SL hàng chắp'
+
+  @UI.lineItem: [ {
+    position: 130 ,
+    label: 'SL hàng chắp'
+  } ]
+  @UI.fieldGroup: [ { qualifier: 'GR1', position: 40} ]
+  Ct16;
+
+  @EndUserText.label: 'Ghi chú'
+  @UI.identification: [ {
+    position: 140 ,
+    label: 'Ghi chú'
+  } ]
+  @UI.lineItem: [ {
+    position: 140 ,
+    label: 'Ghi chú'
+  } ]
+
+  GhiChu;
+
+  @EndUserText.label: 'Đạt'
+  @UI.lineItem: [ {
+    position: 150 ,
+    label: 'Đạt'
+  } ]
+  @UI.fieldGroup: [ { qualifier: 'GR2', position: 10} ]
+  Ct18;
+
+  @EndUserText.label: 'Không đạt (Bảng I)'
+
+  @UI.lineItem: [ {
+    position: 160 ,
+    label: 'Không đạt (Bảng I)'
+  } ]
+  @UI.fieldGroup: [ { qualifier: 'GR2', position: 20} ]
+  Ct19;
+
+  @EndUserText.label: 'Không đạt(Bảng II NT)'
+
+  @UI.lineItem: [ {
+    position: 170 ,
+    label: 'Không đạt(Bảng II NT)'
+  } ]
+  @UI.fieldGroup: [ { qualifier: 'GR2', position: 30} ]
+  Ct20;
+
+  @EndUserText.label: 'Không đạt(Bảng II ĐBNT)'
+
+  @UI.lineItem: [ {
+    position: 180 ,
+    label: 'Không đạt(Bảng II ĐBNT)'
+  } ]
+  @UI.fieldGroup: [ { qualifier: 'GR2', position: 40} ]
+  Ct21;
+
+  @EndUserText.label: 'Kém chất lượng'
+
+  @UI.lineItem: [ {
+    position: 190 ,
+    label: 'Kém chất lượng'
+  } ]
+  @UI.fieldGroup: [ { qualifier: 'GR2', position: 50} ]
+  Ct22;
+
+  @EndUserText.label: 'Tổng cộng'
+
+  @UI.lineItem: [ {
+    position: 200 ,
+    label: 'Tổng cộng'
+  } ]
+  @UI.fieldGroup: [ { qualifier: 'GR2', position: 60} ]
+  Ct23;
+
+  @EndUserText.label: 'Hàng đạt'
+
+  @UI.lineItem: [ {
+    position: 210 ,
+    label: 'Hàng đạt'
+  } ]
+  @UI.fieldGroup: [ { qualifier: 'GR3', position: 10} ]
+  Ct24;
+
+  @EndUserText.label: 'Số lượng KCL'
+
+  @UI.lineItem: [ {
+    position: 220 ,
+    label: 'Số lượng KCL'
+  } ]
+  @UI.fieldGroup: [ { qualifier: 'GR3', position: 20} ]
+  Ct25;
+
+  @EndUserText.label: 'Tỷ lệ KCL %'
+
+  @UI.lineItem: [ {
+    position: 230 ,
+    label: 'Tỷ lệ KCL %'
+  } ]
+  @UI.fieldGroup: [ { qualifier: 'GR3', position: 30} ]
+  Ct26;
+
+  @EndUserText.label: 'Số lượng không đạt bảng I'
+
+  @UI.lineItem: [ {
+    position: 240 ,
+    label: 'Số lượng không đạt bảng I'
+  } ]
+  @UI.fieldGroup: [ { qualifier: 'GR3', position: 40} ]
+  Ct27;
+
+  @EndUserText.label: 'Tỷ lệ không đạt bảng I'
+
+  @UI.lineItem: [ {
+    position: 250 ,
+    label: 'Tỷ lệ không đạt bảng I'
+  } ]
+  @UI.fieldGroup: [ { qualifier: 'GR3', position: 50} ]
+  Ct28;
+
+  @EndUserText.label: 'Số lượng không đạt bảng II (NT)'
+
+  @UI.lineItem: [ {
+    position: 260 ,
+    label: 'Số lượng không đạt bảng II (NT)'
+  } ]
+  @UI.fieldGroup: [ { qualifier: 'GR3', position: 60} ]
+  Ct29;
+
+  @EndUserText.label: 'Tỷ lệ không đạt bảng II (NT)'
+
+  @UI.lineItem: [ {
+    position: 270 ,
+    label: 'Tỷ lệ không đạt bảng II (NT)'
+  } ]
+  @UI.fieldGroup: [ { qualifier: 'GR3', position: 70} ]
+  Ct30;
+
+  @EndUserText.label: 'Số lượng không đạt bảng II (ĐBNT)'
+
+  @UI.lineItem: [ {
+    position: 280 ,
+    label: 'Số lượng không đạt bảng II (ĐBNT)'
+  } ]
+  @UI.fieldGroup: [ { qualifier: 'GR3', position: 80} ]
+  Ct31;
+
+  @EndUserText.label: 'Tỷ lệ không đạt bảng II (ĐBNT)'
+
+  @UI.lineItem: [ {
+    position: 290 ,
+    label: 'Tỷ lệ không đạt bảng II (ĐBNT)'
+  } ]
+  @UI.fieldGroup: [ { qualifier: 'GR3', position: 90} ]
+  Ct32;
+
+  @EndUserText.label: 'Hàng trả chậm sau cont không xuất được hàng'
+
+  @UI.lineItem: [ {
+    position: 300 ,
+    label: 'Hàng trả chậm sau cont không xuất được hàng'
+  } ]
+  @UI.fieldGroup: [ { qualifier: 'GR4', position: 10} ]
+  Ct321;
+
+  @EndUserText.label: 'Hàng trả chậm sau KH nhưng xuất được hàng'
+
+  @UI.lineItem: [ {
+    position: 310 ,
+    label: 'Hàng trả chậm sau KH nhưng xuất được hàng'
+  } ]
+  @UI.fieldGroup: [ { qualifier: 'GR4', position: 20} ]
+  Ct322;
+
+  @EndUserText.label: 'Hàng TP trả về phải kiểm tra 100% do lỗi gia công'
+
+  @UI.lineItem: [ {
+    position: 320 ,
+    label: 'Hàng TP trả về phải kiểm tra 100% do lỗi gia công'
+  } ]
+  @UI.fieldGroup: [ { qualifier: 'GR4', position: 30} ]
+  Ct323;
+
+  @EndUserText.label: 'Hàng TP trả về phải kiểm tra 100% do lỗi C.ty và hàng KK'
+
+  @UI.lineItem: [ {
+    position: 330 ,
+    label: 'Hàng TP trả về phải kiểm tra 100% do lỗi C.ty và hàng KK'
+  } ]
+  @UI.fieldGroup: [ { qualifier: 'GR4', position: 40} ]
+  Ct324;
+
+//  @EndUserText.label: 'Số lượng hàng nhập không tem may'
+//  @UI.lineItem: [ {
+//    position: 331
+//  } ]
+//  @UI.fieldGroup: [ { qualifier: 'GR8', position: 10} ]
+//  bs01;
+//  @EndUserText.label: 'Số lượng hàng nhập  không tem dán'
+//  @UI.lineItem: [ {
+//    position: 332
+//  } ]
+//  @UI.fieldGroup: [ { qualifier: 'GR8', position: 20} ]
+//  bs02;
+//  @EndUserText.label: 'Số lượng hàng nhập không tem treo'
+//  @UI.lineItem: [ {
+//    position: 333
+//  } ]
+//  @UI.fieldGroup: [ { qualifier: 'GR8', position: 30} ]
+//  bs03;
+//  @EndUserText.label: 'Số lượng hàng nhập không tem bắn'
+//  @UI.lineItem: [ {
+//    position: 334
+//  } ]
+//  @UI.fieldGroup: [ { qualifier: 'GR8', position: 40} ]
+//  bs04;
+//  @EndUserText.label: 'Số lượng hàng nhập thiếu tấm bìa'
+//  @UI.lineItem: [ {
+//    position: 335
+//  } ]
+//  @UI.fieldGroup: [ { qualifier: 'GR8', position: 50} ]
+//  bs05;
+  @EndUserText.label: 'Biên bản hiện trường: côn trùng, di vật'
+  @UI.lineItem: [ {
+    position: 336
+  } ]
+  @UI.fieldGroup: [ { qualifier: 'GR8', position: 60} ]
+
+  bs06;
+
+
+  @EndUserText.label: 'Biên bản hiện trường: chỉ nhúng dầu!'
+  @UI.lineItem: [ {
+    position: 337
+  } ]
+  @UI.fieldGroup: [ { qualifier: 'GR8', position: 70} ]
+  bs07;
+
+  @EndUserText.label: 'Lỗi manh'
+
+  @UI.lineItem: [ {
+    position: 340 ,
+    label: 'Lỗi manh'
+  } ]
+  @UI.fieldGroup: [ { qualifier: 'GR5', position: 10} ]
+  Ct33;
+
+  @EndUserText.label: 'Lỗi in'
+
+  @UI.lineItem: [ {
+    position: 350 ,
+    label: 'Lỗi in'
+  } ]
+  @UI.fieldGroup: [ { qualifier: 'GR5', position: 20} ]
+  Ct34;
+
+  @EndUserText.label: 'Bong keo'
+
+  @UI.lineItem: [ {
+    position: 360 ,
+    label: 'Bong keo'
+  } ]
+  @UI.fieldGroup: [ { qualifier: 'GR5', position: 30} ]
+  Ct35;
+
+  @EndUserText.label: 'Bẩn manh'
+
+  @UI.lineItem: [ {
+    position: 370 ,
+    label: 'Bẩn manh'
+  } ]
+  @UI.fieldGroup: [ { qualifier: 'GR5', position: 40} ]
+  Ct36;
+
+  @EndUserText.label: 'Lỗi côn trùng'
+
+  @UI.lineItem: [ {
+    position: 380 ,
+    label: 'Lỗi côn trùng'
+  } ]
+  @UI.fieldGroup: [ { qualifier: 'GR5', position: 50} ]
+  Ct37;
+
+  @EndUserText.label: 'Phế thử tải'
+
+  @UI.lineItem: [ {
+    position: 390 ,
+    label: 'Phế thử tải'
+  } ]
+  @UI.fieldGroup: [ { qualifier: 'GR5', position: 60} ]
+  Ct38;
+
+  @EndUserText.label: 'Lỗi khác'
+
+  @UI.lineItem: [ {
+    position: 400 ,
+    label: 'Lỗi khác'
+  } ]
+  @UI.fieldGroup: [ { qualifier: 'GR5', position: 70} ]
+  Ct39;
+
+  @EndUserText.label: 'Tổng lỗi cty'
+
+  @UI.lineItem: [ {
+    position: 410 ,
+    label: 'Tổng lỗi cty'
+  } ]
+  @UI.fieldGroup: [ { qualifier: 'GR5', position: 80} ]
+  Ct40;
+
+  @EndUserText.label: 'Bẩn'
+
+  @UI.lineItem: [ {
+    position: 420 ,
+    label: 'Bẩn'
+  } ]
+  @UI.fieldGroup: [ { qualifier: 'GR6', position: 10} ]
+  Ct41;
+
+  @EndUserText.label: 'Rách'
+
+  @UI.lineItem: [ {
+    position: 430 ,
+    label: 'Rách'
+  } ]
+  @UI.fieldGroup: [ { qualifier: 'GR6', position: 20} ]
+  Ct42;
+
+  @EndUserText.label: 'Sai quy cách'
+
+  @UI.lineItem: [ {
+    position: 440 ,
+    label: 'Sai quy cách'
+  } ]
+  @UI.fieldGroup: [ { qualifier: 'GR6', position: 30} ]
+  Ct43;
+
+  @EndUserText.label: 'May xấu'
+
+  @UI.lineItem: [ {
+    position: 450 ,
+    label: 'May xấu'
+  } ]
+  @UI.fieldGroup: [ { qualifier: 'GR6', position: 40} ]
+  Ct44;
+
+  @EndUserText.label: 'Lỗ chân kim'
+
+  @UI.lineItem: [ {
+    position: 460 ,
+    label: 'Lỗ chân kim'
+  } ]
+  @UI.fieldGroup: [ { qualifier: 'GR6', position: 50} ]
+  Ct45;
+
+  @EndUserText.label: 'Nhàu nát'
+
+  @UI.lineItem: [ {
+    position: 470 ,
+    label: 'Nhàu nát'
+  } ]
+  @UI.fieldGroup: [ { qualifier: 'GR6', position: 60} ]
+  Ct46;
+
+  @EndUserText.label: 'Tổng lỗi gia công'
+
+  @UI.lineItem: [ {
+    position: 480 ,
+    label: 'Tổng lỗi gia công'
+  } ]
+  @UI.fieldGroup: [ { qualifier: 'GR6', position: 70} ]
+  Ct47;
+
+  @EndUserText.label: 'Tổng lỗi'
+
+  @UI.lineItem: [ {
+    position: 490 ,
+    label: 'Tổng lỗi'
+  } ]
+  @UI.fieldGroup: [ { qualifier: 'GR7', position: 10} ]
+  Ct48;
+  //
+  //  @UI.identification: [ {
+  //    position: 500
+  //  } ]
+  //  @UI.lineItem: [ {
+  //    position: 500
+  //  } ]
+  //
+  //  CreatedBy;
+  //
+  //  @UI.identification: [ {
+  //    position: 510
+  //  } ]
+  //  @UI.lineItem: [ {
+  //    position: 510
+  //  } ]
+  //
+  //  CreatedAt;
+  //
+  //  @UI.identification: [ {
+  //    position: 520
+  //  } ]
+  //  @UI.lineItem: [ {
+  //    position: 520
+  //  } ]
+  //
+  //  LastChangedBy;
+  //
+  //  @UI.identification: [ {
+  //    position: 530
+  //  } ]
+  //  @UI.lineItem: [ {
+  //    position: 530
+  //  } ]
+  //
+  //  LastChangedAt;
+
+}
